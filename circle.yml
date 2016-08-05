@@ -7,7 +7,5 @@ dependencies:
   post:
     - bundle exec rake assets:precompile
 test:
-  pre:
-    - bundle exec rake db:test:prepare
   post:
-    - bundle exec rake test:custom
+    - bundle exec rake test
