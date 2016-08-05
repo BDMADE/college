@@ -1,0 +1,5 @@
+LineLength:
+  Max: 110
+
+StringLiterals:
+EnforcedStyle: single_quotes
