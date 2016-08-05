@@ -19,3 +19,25 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Here are some files you may want to ignore globally:
+Guardfile
+# scm revert files
+**.orig
+
+.idea/
+.rvmrc
+# Mac finder artifacts
+.DS_Store
+
+# Netbeans project directory
+/nbproject/
+
+# RubyMine project files
+.idea
+
+# Textmate project files
+/*.tmproj
+
+# vim artifacts
+**.swp
