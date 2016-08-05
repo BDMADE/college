@@ -1,0 +1,11 @@
+machine:
+  ruby:
+    version: 2.3.1
+dependencies:
+  pre:
+    - gem install bundler
+  post:
+    - bundle exec rake assets:precompile
+test:
+  post:
+    - bundle exec rake test
