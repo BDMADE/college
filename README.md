@@ -1,24 +1,21 @@
-# README
+# College ![Build Status](https://circleci.com/gh/BDMADE/college.svg?style=shield&circle-token=:circle-token)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A college management system is built with ruby on rails technology.
 
-Things you may want to cover:
+# Installation Process
 
-* Ruby version
+Clone from github : `$ git clone git@github.com:BDMADE/college.git`
 
-* System dependencies
+Move in college local repository : `$ cd college`
 
-* Configuration
+Install bundler : `$ gem install bundler`
 
-* Database creation
+Install college : `$ bundle install`
 
-* Database initialization
+Database creation : `$ rake db:create`
 
-* How to run the test suite
+Database migrate : `$ rake db:migrate`
 
-* Services (job queues, cache servers, search engines, etc.)
+Database seed : `$ rake db:seed`
 
-* Deployment instructions
-
-* ...
+Run server : `$ rails server` or `$ rails s`
