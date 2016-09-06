@@ -6,6 +6,11 @@ dependencies:
     - gem install bundler
   post:
     - bundle exec rake assets:precompile
+database:
+  post:
+    - bundle exec rake db:migrate
+    - bundle exec rake db:test:prepare    
+
 test:
   post:
     - bundle exec rake test
