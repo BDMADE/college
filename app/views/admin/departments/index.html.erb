@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Departments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Short form</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_departments.each do |admin_department| %>
+      <tr>
+        <td><%= admin_department.name %></td>
+        <td><%= admin_department.short_form %></td>
+        <td><%= link_to 'Show', admin_department %></td>
+        <td><%= link_to 'Edit', edit_admin_department_path(admin_department) %></td>
+        <td><%= link_to 'Destroy', admin_department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Department', new_admin_department_path %>
