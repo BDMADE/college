@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_department.name %>
+</p>
+
+<p>
+  <strong>Short form:</strong>
+  <%= @admin_department.short_form %>
+</p>
+
+<%= link_to 'Edit', edit_admin_department_path(@admin_department) %> |
+<%= link_to 'Back', admin_departments_path %>
