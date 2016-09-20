@@ -2,3 +2,4 @@
 --require spec_helper
 --format progress
 --order defined
+--format documentation
