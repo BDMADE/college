@@ -23,13 +23,18 @@ RSpec.describe Admin::SemestersController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Admin::Semester. As you add validations to Admin::Semester, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do {
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+      name: 'aziz',
+      short_form: 'AH'
   }
+  end
+  let(:invalid_attributes) do {
+
+      name: '',
+      short_form: ''
+  }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -102,15 +107,19 @@ RSpec.describe Admin::SemestersController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+      let(:new_attributes) do {
+
+          name: 'Information Tech',
+          short_form: 'IT'
       }
+      end
+
 
       it "updates the requested admin_semester" do
         semester = Admin::Semester.create! valid_attributes
         put :update, params: {id: semester.to_param, admin_semester: new_attributes}, session: valid_session
         semester.reload
-        skip("Add assertions for updated state")
+
       end
 
       it "assigns the requested admin_semester as @admin_semester" do
