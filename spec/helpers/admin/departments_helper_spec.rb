@@ -11,5 +11,10 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe Admin::DepartmentsHelper, type: :helper do
+  context 'simple test' do
+    it 'passes normal test' do
+      expect(2+2).to eq(4)
+    end
+  end
 
 end

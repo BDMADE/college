@@ -25,18 +25,18 @@ RSpec.describe Admin::DepartmentsController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) do {
 
-      name: "aziz",
-      short_form: "haque"
-    }
-    end
+    name: 'Computer Science',
+    short_form: 'CS'
+  }
+  end
 
   let(:invalid_attributes) do{
 
-      name: " " ,
-      short_form: " "
+    name: '' ,
+    short_form: ''
 
   }
-end
+  end
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # Admin::DepartmentsController. Be sure to keep this updated too.
@@ -110,10 +110,10 @@ end
     context "with valid params" do
       let(:new_attributes) do{
 
-        name: "tanbir",
-            short_form: "hassn"
+        name: 'Electrical and Electronics Engineering',
+        short_form: 'EEE'
       }
-end
+      end
       it "updates the requested admin_department" do
         department = Admin::Department.create! valid_attributes
         put :update, params: {id: department.to_param, admin_department: new_attributes}, session: valid_session
