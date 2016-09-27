@@ -13,6 +13,10 @@ RSpec.describe "admin/semesters/index", type: :view do
       )
     ])
   end
-
+  it 'renders a list of admin/semesters' do
+    render
+    assert_select 'tr>td', :text => 'first semester'.to_s, :count => 1
+    assert_select 'tr>td', :text => '1st'.to_s, :count => 1
+  end
 
 end

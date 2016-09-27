@@ -25,8 +25,8 @@ RSpec.describe Admin::SemestersController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) do {
 
-      name: 'aziz',
-      short_form: 'AH'
+      name: 'first semester',
+      short_form: '1st'
   }
   end
   let(:invalid_attributes) do {
