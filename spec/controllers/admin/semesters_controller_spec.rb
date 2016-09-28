@@ -109,8 +109,8 @@ RSpec.describe Admin::SemestersController, type: :controller do
     context "with valid params" do
       let(:new_attributes) do {
 
-          name: 'Information Tech',
-          short_form: 'IT'
+          name: '2nd Semester',
+          short_form: '2nd'
       }
       end
 
