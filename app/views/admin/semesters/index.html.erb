@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Semesters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Short form</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_semesters.each do |admin_semester| %>
+      <tr>
+        <td><%= admin_semester.name %></td>
+        <td><%= admin_semester.short_form %></td>
+        <td><%= link_to 'Show', admin_semester %></td>
+        <td><%= link_to 'Edit', edit_admin_semester_path(admin_semester) %></td>
+        <td><%= link_to 'Destroy', admin_semester, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Semester', new_admin_semester_path %>
