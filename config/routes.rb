@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sliders
   namespace :admin do
     resources :abouts
   end
