@@ -1,0 +1,33 @@
+<%= form_for(admin_about) do |f| %>
+  <% if admin_about.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_about.errors.count, "error") %> prohibited this admin_about from being saved:</h2>
+
+      <ul>
+        <% admin_about.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :slug %>
+    <%= f.text_field :slug %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @admin_about.slug %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_about.description %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @admin_about.image.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_about_path(@admin_about) %> |
+<%= link_to 'Back', admin_abouts_path %>
