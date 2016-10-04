@@ -4,24 +4,24 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Slug</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Slug</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @admin_abouts.each do |admin_about| %>
-      <tr>
-        <td><%= admin_about.slug %></td>
-        <td><%= admin_about.description %></td>
-        <td>  <%= image_tag admin_about.image.url(:thumb)%></td>
-        <td><%= link_to 'Show', admin_about %></td>
-        <td><%= link_to 'Edit', edit_admin_about_path(admin_about) %></td>
-        <td><%= link_to 'Destroy', admin_about, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @admin_abouts.each do |admin_about| %>
+    <tr>
+      <td><%= admin_about.slug %></td>
+      <td><%= admin_about.description %></td>
+      <td><%= image_tag admin_about.image.url(:thumb) %></td>
+      <td><%= link_to 'Show', admin_about %></td>
+      <td><%= link_to 'Edit', edit_admin_about_path(admin_about) %></td>
+      <td><%= link_to 'Destroy', admin_about, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 

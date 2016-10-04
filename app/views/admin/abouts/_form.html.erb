@@ -4,9 +4,9 @@
       <h2><%= pluralize(admin_about.errors.count, "error") %> prohibited this admin_about from being saved:</h2>
 
       <ul>
-      <% admin_about.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% admin_about.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -20,12 +20,12 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
-    <div>
-      <%= f.label :image %>
-      <%= f.file_field :image %>
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
 
 
-    </div>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

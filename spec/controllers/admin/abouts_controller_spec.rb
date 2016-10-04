@@ -23,18 +23,18 @@ RSpec.describe Admin::AboutsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Admin::About. As you add validations to Admin::About, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do{
-
-
-  slug: 'first semester',
-      description: '1st'
-  }
-end
-  let(:invalid_attributes) do{
-    slug: '',
-        description: '1st'
-  }
-end
+  let(:valid_attributes) do
+    {
+      slug: 'about us',
+      description: 'This is about us page'
+    }
+  end
+  let(:invalid_attributes) do
+    {
+      slug: '',
+      description: ''
+    }
+  end
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # Admin::AboutsController. Be sure to keep this updated too.
@@ -106,12 +106,13 @@ end
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) do{
+      let(:new_attributes) do
+        {
 
-       slug: '2nd semester',
-          description: '1st'
+          slug: 'About me',
+          description: 'This is updated about page.'
 
-      }
+        }
       end
 
       it "updates the requested admin_about" do
