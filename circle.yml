@@ -12,4 +12,4 @@ database:
 
 test:
   post:
-    - bundle exec rspec spec
+    - bundle exec rake test
