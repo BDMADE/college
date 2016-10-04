@@ -4,12 +4,8 @@ RSpec.describe "admin/abouts/index", type: :view do
   before(:each) do
     assign(:admin_abouts, [
       Admin::About.create!(
-        :slug => 'first semester',
-        :description => "1st"
-      ),
-      Admin::About.create!(
-        :slug => "Slug",
-        :description => "MyText"
+        :slug => 'About',
+        :description => "This is about"
       )
     ])
   end
@@ -17,8 +13,8 @@ RSpec.describe "admin/abouts/index", type: :view do
   it "renders a list of admin/abouts" do
     render
 
-    assert_select 'tr>td', :text => 'first semester'.to_s, :count => 1
-    assert_select 'tr>td', :text => '1st'.to_s, :count => 1
+    assert_select 'tr>td', :text => 'About'.to_s, :count => 1
+    assert_select 'tr>td', :text => 'This is about'.to_s, :count => 1
 
   end
 end
