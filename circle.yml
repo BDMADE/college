@@ -9,6 +9,7 @@ dependencies:
 database:
   post:
     - bundle exec rake db:test:prepare
+    - bin/rails db:migrate RAILS_ENV=test
 
 test:
   post:
