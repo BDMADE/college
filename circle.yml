@@ -6,13 +6,6 @@ dependencies:
     - gem install bundler
   post:
     - bundle exec rake assets:precompile
-database:
-  override:
-    - bundle exec rake db:drop
-    - bundle exec rake db:create RAILS_ENV=test
-    - bundle exec rake db:migrate RAILS_ENV=test
-  post:
-    - bundle exec rake db:test:prepare
 test:
   post:
     - bundle exec rake test
