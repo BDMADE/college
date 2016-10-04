@@ -7,6 +7,8 @@ dependencies:
   post:
     - bundle exec rake assets:precompile
 database:
+  pre:
+    - bundle exec rake db:drop RAILS_ENV=test
   post:
     - bundle exec rake db:test:prepare
     - bin/rails db:migrate RAILS_ENV=test
