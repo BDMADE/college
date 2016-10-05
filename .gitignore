@@ -25,7 +25,7 @@ Guardfile
 # scm revert files
 **.orig
 
-.idea/
+/.idea/
 .rvmrc
 # Mac finder artifacts
 .DS_Store
