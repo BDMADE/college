@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002143844) do
+ActiveRecord::Schema.define(version: 20161005142047) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20161002143844) do
     t.string   "short_form"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "admission_eligibilities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

@@ -1,0 +1,2 @@
+class AdmissionEligibility < ApplicationRecord
+end
