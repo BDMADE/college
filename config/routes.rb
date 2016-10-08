@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :notice_boards
+  end
   #namespace :admin do
    # resources :abouts
  # end

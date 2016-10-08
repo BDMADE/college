@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Notice Boards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Notice type</th>
+      <th>Semester</th>
+      <th>Department</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_notice_boards.each do |admin_notice_board| %>
+      <tr>
+        <td><%= admin_notice_board.name %></td>
+        <td><%= admin_notice_board.notice_type %></td>
+        <td><%= admin_notice_board.semester %></td>
+        <td><%= admin_notice_board.department %></td>
+        <td><%= link_to 'Show', admin_notice_board %></td>
+        <td><%= link_to 'Edit', edit_admin_notice_board_path(admin_notice_board) %></td>
+        <td><%= link_to 'Destroy', admin_notice_board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Notice Board', new_admin_notice_board_path %>

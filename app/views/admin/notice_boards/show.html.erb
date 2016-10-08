@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_notice_board.name %>
+</p>
+
+<p>
+  <strong>Notice type:</strong>
+  <%= @admin_notice_board.notice_type %>
+</p>
+
+<p>
+  <strong>Semester:</strong>
+  <%= @admin_notice_board.semester %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @admin_notice_board.department %>
+</p>
+
+<%= link_to 'Edit', edit_admin_notice_board_path(@admin_notice_board) %> |
+<%= link_to 'Back', admin_notice_boards_path %>
