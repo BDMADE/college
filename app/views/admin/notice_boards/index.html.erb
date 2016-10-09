@@ -18,8 +18,8 @@
       <tr>
         <td><%= admin_notice_board.name %></td>
         <td><%= admin_notice_board.notice_type %></td>
-        <td><%= admin_notice_board.semester %></td>
-        <td><%= admin_notice_board.department %></td>
+        <td><%= admin_notice_board.semester.short_form %></td>
+        <td><%= admin_notice_board.department.short_form %></td>
         <td><%= link_to 'Show', admin_notice_board %></td>
         <td><%= link_to 'Edit', edit_admin_notice_board_path(admin_notice_board) %></td>
         <td><%= link_to 'Destroy', admin_notice_board, method: :delete, data: { confirm: 'Are you sure?' } %></td>

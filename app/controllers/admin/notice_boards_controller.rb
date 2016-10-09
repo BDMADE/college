@@ -52,7 +52,7 @@ class Admin::NoticeBoardsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def admin_notice_board_params
-      params.require(:admin_notice_board).permit(:name, :notice_type, :semester_id, :department_id)
-    end
-end
+  def admin_notice_board_params
+    params.require(:admin_notice_board).permit(:name, :notice_type, :semester_id, :department_id,admin_notice_forms_attributes:[:id,:description,:background_color,:_destroy])
+  end
+  end

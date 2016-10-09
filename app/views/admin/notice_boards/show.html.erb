@@ -12,12 +12,12 @@
 
 <p>
   <strong>Semester:</strong>
-  <%= @admin_notice_board.semester %>
+  <%= @admin_notice_board.semester.short_form %>
 </p>
 
 <p>
   <strong>Department:</strong>
-  <%= @admin_notice_board.department %>
+  <%= @admin_notice_board.department.short_form %>
 </p>
 
 <%= link_to 'Edit', edit_admin_notice_board_path(@admin_notice_board) %> |
