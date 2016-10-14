@@ -23,13 +23,24 @@ RSpec.describe Admin::NoticeBoardsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Admin::NoticeBoard. As you add validations to Admin::NoticeBoard, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    {
+        name: 'Notice 1',
+        notice_type: 'Normal',
+        semester: FactoryGirl.create(:admin_semester),
+        department: FactoryGirl.create(:admin_department)
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+    }
+  end
+
+  let(:invalid_attributes) do
+    {
+        name: '',
+        notice_type: '',
+        semester: '',
+        department: ''
+    }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -68,25 +79,6 @@ RSpec.describe Admin::NoticeBoardsController, type: :controller do
   end
 
   describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Admin::NoticeBoard" do
-        expect {
-          post :create, params: {admin_notice_board: valid_attributes}, session: valid_session
-        }.to change(Admin::NoticeBoard, :count).by(1)
-      end
-
-      it "assigns a newly created admin_notice_board as @admin_notice_board" do
-        post :create, params: {admin_notice_board: valid_attributes}, session: valid_session
-        expect(assigns(:admin_notice_board)).to be_a(Admin::NoticeBoard)
-        expect(assigns(:admin_notice_board)).to be_persisted
-      end
-
-      it "redirects to the created admin_notice_board" do
-        post :create, params: {admin_notice_board: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Admin::NoticeBoard.last)
-      end
-    end
-
     context "with invalid params" do
       it "assigns a newly created but unsaved admin_notice_board as @admin_notice_board" do
         post :create, params: {admin_notice_board: invalid_attributes}, session: valid_session
@@ -102,15 +94,19 @@ RSpec.describe Admin::NoticeBoardsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+      let(:new_attributes) do
+        {
+            name: 'Notice 2',
+            notice_type: 'Specific',
+            semester: FactoryGirl.create(:admin_semester, name: 'Second Semester', short_form: '2nd'),
+            department: FactoryGirl.create(:admin_department,name: 'Computer Science and Engineering', short_form: 'CSE')
+        }
+      end
 
       it "updates the requested admin_notice_board" do
         notice_board = Admin::NoticeBoard.create! valid_attributes
         put :update, params: {id: notice_board.to_param, admin_notice_board: new_attributes}, session: valid_session
         notice_board.reload
-        skip("Add assertions for updated state")
       end
 
       it "assigns the requested admin_notice_board as @admin_notice_board" do
@@ -136,7 +132,7 @@ RSpec.describe Admin::NoticeBoardsController, type: :controller do
       it "re-renders the 'edit' template" do
         notice_board = Admin::NoticeBoard.create! valid_attributes
         put :update, params: {id: notice_board.to_param, admin_notice_board: invalid_attributes}, session: valid_session
-        expect(response).to render_template("edit")
+        expect(response).to render_template('edit')
       end
     end
   end

@@ -6,23 +6,15 @@ RSpec.describe "admin/notice_boards/index", type: :view do
       Admin::NoticeBoard.create!(
         :name => "Name",
         :notice_type => "Notice Type",
-        :semester => nil,
-        :department => nil
-      ),
-      Admin::NoticeBoard.create!(
-        :name => "Name",
-        :notice_type => "Notice Type",
-        :semester => nil,
-        :department => nil
+        :semester => FactoryGirl.create(:admin_semester),
+        :department => FactoryGirl.create(:admin_department)
       )
     ])
   end
 
   it "renders a list of admin/notice_boards" do
     render
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Notice Type".to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => "Name".to_s, :count => 1
+    assert_select "tr>td", :text => "Notice Type".to_s, :count => 1
   end
 end

@@ -57,11 +57,4 @@ ActiveRecord::Schema.define(version: 20161008230610) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "admission_eligibilities", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
 end
