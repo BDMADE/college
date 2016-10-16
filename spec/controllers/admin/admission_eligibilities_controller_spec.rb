@@ -23,13 +23,17 @@ RSpec.describe Admin::AdmissionEligibilitiesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Admin::AdmissionEligibility. As you add validations to Admin::AdmissionEligibility, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+  let(:valid_attributes)do {
+      name:"MyString",
+  description: "MyText"
   }
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+  let(:invalid_attributes)do {
+      name:"",
+      description: ""
   }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -102,15 +106,17 @@ RSpec.describe Admin::AdmissionEligibilitiesController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+      let(:new_attributes)do{
+        name:"MyString1",
+            description: "MyText1"
       }
+      end
 
       it "updates the requested admin_admission_eligibility" do
         admission_eligibility = Admin::AdmissionEligibility.create! valid_attributes
         put :update, params: {id: admission_eligibility.to_param, admin_admission_eligibility: new_attributes}, session: valid_session
         admission_eligibility.reload
-        skip("Add assertions for updated state")
+
       end
 
       it "assigns the requested admin_admission_eligibility as @admin_admission_eligibility" do
