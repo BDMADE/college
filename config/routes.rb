@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :admission_eligibilities
+  end
   #namespace :admin do
    # resources :abouts
  # end
