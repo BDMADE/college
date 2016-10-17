@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+ # namespace :admin do
+    #resources :tuition_fees_groups
+ # end
   #namespace :admin do
    # resources :abouts
  # end
   namespace :admin do
-    resources :semesters,:departments,:abouts
+    resources :semesters,:departments,:abouts,:tuition_fees_groups
   end
   #namespace :admin do
    # resources :departments
