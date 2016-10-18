@@ -25,7 +25,7 @@ RSpec.describe Admin::AdmissionEligibilitiesController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes)do {
       name:"MyString",
-  description: "MyText"
+      description: "MyText"
   }
   end
 
@@ -107,7 +107,7 @@ RSpec.describe Admin::AdmissionEligibilitiesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes)do{
-        name:"MyString1",
+            name:"MyString1",
             description: "MyText1"
       }
       end
