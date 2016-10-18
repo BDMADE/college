@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.label :background_color %>
+    <%= f.radio_button :background_color, 'success' %> Pass
+    <%= f.radio_button :background_color, 'danger' %> Fail
+    <%= f.radio_button :background_color, 'warning' %> Referred
+    <%= f.radio_button :background_color, 'info' %> Normal
+    <%= link_to_remove_association 'Remove', f, class: 'form-button btn btn-default' %>
+  </div>
+</div>

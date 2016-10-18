@@ -1,0 +1,53 @@
+<%= form_for(admin_notice_board) do |f| %>
+  <% if admin_notice_board.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_notice_board.errors.count, "error") %> prohibited this admin_notice_board from being saved:</h2>
+
+      <ul>
+      <% admin_notice_board.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+      <%= f.label :notice_type %>
+      <%= f.radio_button :notice_type, 'normal' %> Normal
+      <%= f.radio_button :notice_type, 'specific' %> Specific
+    </div>
+    <div class="field">
+      <%= f.label :semester_id %>
+      <% if Admin::Semester.all.blank? %>
+          <%= link_to 'Add', new_admin_semester_path %>
+      <% else %>
+          <%= f.collection_select :semester_id, Admin::Semester.all, :id, :short_form, prompt: true %>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :department_id %>
+      <% if Admin::Department.all.blank? %>
+          <%= link_to 'Add', new_admin_department_path %>
+      <% else %>
+          <%= f.collection_select :department_id, Admin::Department.all, :id, :short_form, prompt: true %>
+      <% end %>
+    </div>
+    <div class="field">
+      <%= f.label :notice_form %>
+      <div id="admin_notice_forms">
+        <%= f.fields_for :admin_notice_forms do |notice_form| %>
+            <%= render 'admin/notice_boards/admin_notice_form_fields', f: notice_form %>
+        <% end %>
+        <%= link_to_add_association 'Add Notice Form',f,:admin_notice_forms,class: 'btn btn-primary' %>
+      </div>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
