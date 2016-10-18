@@ -36,27 +36,7 @@ ActiveRecord::Schema.define(version: 20161016173812) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "admin_notice_boards", force: :cascade do |t|
-    t.string   "name"
-    t.string   "notice_type"
-    t.integer  "semester_id"
-    t.integer  "department_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["department_id"], name: "index_admin_notice_boards_on_department_id"
-    t.index ["semester_id"], name: "index_admin_notice_boards_on_semester_id"
-  end
-
-  create_table "admin_notice_forms", force: :cascade do |t|
-    t.string   "description"
-    t.string   "background_color"
-    t.integer  "notice_board_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["notice_board_id"], name: "index_admin_notice_forms_on_notice_board_id"
-  end
-
+  
   create_table "admin_semesters", force: :cascade do |t|
     t.string   "name"
     t.string   "short_form"
