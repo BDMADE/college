@@ -25,7 +25,7 @@ RSpec.describe Admin::AdmissionEligibilitiesController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes)do {
       name:"MyString",
-  description: "MyText"
+      description: "MyText"
   }
   end
 
