@@ -37,16 +37,7 @@ ActiveRecord::Schema.define(version: 20161017143538) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "admin_notice_boards", force: :cascade do |t|
-    t.string   "name"
-    t.string   "notice_type"
-    t.integer  "semester_id"
-    t.integer  "department_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["department_id"], name: "index_admin_notice_boards_on_department_id"
-    t.index ["semester_id"], name: "index_admin_notice_boards_on_semester_id"
-  end
+
 
 
 
@@ -57,11 +48,5 @@ ActiveRecord::Schema.define(version: 20161017143538) do
     t.datetime "updated_at", null: false
   end
 
-
-  create_table "admin_tuition_fees_groups", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end
