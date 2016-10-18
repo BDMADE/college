@@ -48,14 +48,7 @@ ActiveRecord::Schema.define(version: 20161017143538) do
     t.index ["semester_id"], name: "index_admin_notice_boards_on_semester_id"
   end
 
-  create_table "admin_notice_forms", force: :cascade do |t|
-    t.string   "description"
-    t.string   "background_color"
-    t.integer  "notice_board_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["notice_board_id"], name: "index_admin_notice_forms_on_notice_board_id"
-  end
+
 
   create_table "admin_semesters", force: :cascade do |t|
     t.string   "name"
@@ -64,14 +57,6 @@ ActiveRecord::Schema.define(version: 20161017143538) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "admin_tuition_fees", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "payable"
-    t.integer  "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_admin_tuition_fees_on_group_id"
-  end
 
   create_table "admin_tuition_fees_groups", force: :cascade do |t|
     t.string   "name"
