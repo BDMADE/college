@@ -79,6 +79,13 @@ RSpec.describe Admin::NoticeBoardsController, type: :controller do
   end
 
   describe "POST #create" do
+    context "with valid params" do
+      it "creates a new Admin::NoticeBoard" do
+        expect {
+          Admin::NoticeBoard.create!(valid_attributes)
+        }.to change(Admin::NoticeBoard, :count).by(1)
+      end
+    end
     context "with invalid params" do
       it "assigns a newly created but unsaved admin_notice_board as @admin_notice_board" do
         post :create, params: {admin_notice_board: invalid_attributes}, session: valid_session
