@@ -1,0 +1,3 @@
+class Admin::TuitionFee < ApplicationRecord
+  belongs_to :group
+end
