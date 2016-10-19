@@ -23,12 +23,7 @@ ActiveRecord::Schema.define(version: 20161017143538) do
     t.datetime "image_updated_at"
   end
 
-  create_table "admin_admission_eligibilities", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
+
 
   create_table "admin_departments", force: :cascade do |t|
     t.string   "name"
