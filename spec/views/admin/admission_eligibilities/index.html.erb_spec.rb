@@ -6,11 +6,8 @@ RSpec.describe "admin/admission_eligibilities/index", type: :view do
       Admin::AdmissionEligibility.create!(
         :name => "Name",
         :description => "MyText"
-      )
-
-    ])
+      )])
   end
-
   it "renders a list of admin/admission_eligibilities" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 1
