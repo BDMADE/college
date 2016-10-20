@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016173812) do
+ActiveRecord::Schema.define(version: 20161020194921) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20161016173812) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "admin_admission_fees_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "admin_departments", force: :cascade do |t|
@@ -60,6 +67,21 @@ ActiveRecord::Schema.define(version: 20161016173812) do
   create_table "admin_semesters", force: :cascade do |t|
     t.string   "name"
     t.string   "short_form"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_tuition_fees", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "payable"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_admin_tuition_fees_on_group_id"
+  end
+
+  create_table "admin_tuition_fees_groups", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

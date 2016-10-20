@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
+    resources :admission_fees_statuses
+  end
+  namespace :admin do
     resources :semesters, :departments, :abouts, :notice_boards,:admission_eligibilities
   end
    # resources :semesters,:departments,:abouts,:admission_eligibilities
