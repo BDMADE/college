@@ -7,7 +7,7 @@ Rails.application.routes.draw do
  # end
   namespace :admin do
 
-    resources :semesters,:departments,:abouts,:tuition_fees_groups,:notice_boards
+    resources :semesters,:departments,:abouts,:tuition_fees_groups,:notice_boards,:admission_eligibilities
   end
   #namespace :admin do
    # resources :departments
@@ -17,4 +17,3 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
-g
