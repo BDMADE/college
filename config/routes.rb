@@ -6,11 +6,14 @@ Rails.application.routes.draw do
    # resources :abouts
  # end
   namespace :admin do
-    resources :semesters,:departments,:abouts,:tuition_fees_groups
+
+    resources :semesters,:departments,:abouts,:tuition_fees_groups,:notice_boards
   end
   #namespace :admin do
    # resources :departments
  # end
+   # resources :semesters,:departments,:abouts,:admission_eligibilities
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

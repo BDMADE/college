@@ -11,10 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161017143538) do
 =======
 ActiveRecord::Schema.define(version: 20161008230610) do
 >>>>>>> origin/master
+=======
+ActiveRecord::Schema.define(version: 20161016173812) do
+>>>>>>> master
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -27,7 +31,16 @@ ActiveRecord::Schema.define(version: 20161008230610) do
     t.datetime "image_updated_at"
   end
 
+<<<<<<< HEAD
 
+=======
+  create_table "admin_admission_eligibilities", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+>>>>>>> master
 
   create_table "admin_departments", force: :cascade do |t|
     t.string   "name"
