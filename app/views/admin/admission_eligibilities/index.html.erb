@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Admission Eligibilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_admission_eligibilities.each do |admin_admission_eligibility| %>
+      <tr>
+        <td><%= admin_admission_eligibility.name %></td>
+        <td><%= admin_admission_eligibility.description %></td>
+        <td><%= link_to 'Show', admin_admission_eligibility %></td>
+        <td><%= link_to 'Edit', edit_admin_admission_eligibility_path(admin_admission_eligibility) %></td>
+        <td><%= link_to 'Destroy', admin_admission_eligibility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Admission Eligibility', new_admin_admission_eligibility_path %>
