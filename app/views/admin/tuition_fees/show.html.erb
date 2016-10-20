@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_tuition_fee.name %>
+</p>
+
+<p>
+  <strong>Payable:</strong>
+  <%= @admin_tuition_fee.payable %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @admin_tuition_fee.group %>
+</p>
+
+<%= link_to 'Edit', edit_admin_tuition_fee_path(@admin_tuition_fee) %> |
+<%= link_to 'Back', admin_tuition_fees_path %>
