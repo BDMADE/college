@@ -6,7 +6,6 @@ Rails.application.routes.draw do
    # resources :abouts
  # end
   namespace :admin do
-
     resources :semesters,:departments,:abouts,:tuition_fees_groups,:notice_boards,:admission_eligibilities
   end
   #namespace :admin do
