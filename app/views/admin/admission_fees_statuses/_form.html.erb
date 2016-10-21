@@ -1,0 +1,27 @@
+<%= form_for(admin_admission_fees_status) do |f| %>
+  <% if admin_admission_fees_status.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_admission_fees_status.errors.count, "error") %> prohibited this admin_admission_fees_status from being saved:</h2>
+
+      <ul>
+      <% admin_admission_fees_status.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value %>
+    <%= f.number_field :value %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

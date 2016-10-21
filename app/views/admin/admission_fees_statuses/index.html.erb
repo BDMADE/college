@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Admission Fees Statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_admission_fees_statuses.each do |admin_admission_fees_status| %>
+      <tr>
+        <td><%= admin_admission_fees_status.name %></td>
+        <td><%= admin_admission_fees_status.value %></td>
+        <td><%= link_to 'Show', admin_admission_fees_status %></td>
+        <td><%= link_to 'Edit', edit_admin_admission_fees_status_path(admin_admission_fees_status) %></td>
+        <td><%= link_to 'Destroy', admin_admission_fees_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Admission Fees Status', new_admin_admission_fees_status_path %>
