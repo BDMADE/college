@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016173812) do
+ActiveRecord::Schema.define(version: 20161017143538) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -60,6 +60,12 @@ ActiveRecord::Schema.define(version: 20161016173812) do
   create_table "admin_semesters", force: :cascade do |t|
     t.string   "name"
     t.string   "short_form"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_tuition_fees_groups", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
