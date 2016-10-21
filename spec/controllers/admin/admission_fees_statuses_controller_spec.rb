@@ -30,7 +30,7 @@ RSpec.describe Admin::AdmissionFeesStatusesController, type: :controller do
   }end
 
   let(:invalid_attributes) do{
-      name: "",
+      name: "MyString",
       value: ''
 
   }end
