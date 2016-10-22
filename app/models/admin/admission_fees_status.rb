@@ -1,5 +1,5 @@
 class Admin::AdmissionFeesStatus < ApplicationRecord
   validates :name, :value, presence: true
-  validates :name, :value, uniqueness: true
+  validates :name, uniqueness: true
 
 end
