@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Tuition Fees Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_tuition_fees_groups.each do |admin_tuition_fees_group| %>
+      <tr>
+        <td><%= admin_tuition_fees_group.name %></td>
+        <td><%= link_to 'Show', admin_tuition_fees_group %></td>
+        <td><%= link_to 'Edit', edit_admin_tuition_fees_group_path(admin_tuition_fees_group) %></td>
+        <td><%= link_to 'Destroy', admin_tuition_fees_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Tuition Fees Group', new_admin_tuition_fees_group_path %>

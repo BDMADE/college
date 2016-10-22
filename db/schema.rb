@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161020140325) do
+=======
+ActiveRecord::Schema.define(version: 20161017143538) do
+>>>>>>> master
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -64,6 +68,7 @@ ActiveRecord::Schema.define(version: 20161020140325) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "admin_tuition_fees", force: :cascade do |t|
     t.string   "name"
     t.integer  "payable"
@@ -73,6 +78,8 @@ ActiveRecord::Schema.define(version: 20161020140325) do
     t.index ["group_id"], name: "index_admin_tuition_fees_on_group_id"
   end
 
+=======
+>>>>>>> master
   create_table "admin_tuition_fees_groups", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
