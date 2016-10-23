@@ -24,13 +24,12 @@ RSpec.describe Admin::AdmissionFeesStatusesController, type: :controller do
   # Admin::AdmissionFeesStatus. As you add validations to Admin::AdmissionFeesStatus, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do{
-
       name: "MyString",
-  value: 1
+      value: 1
   }end
 
   let(:invalid_attributes)do {
-    name: "",
+        name: "",
         value: ""
   }end
 
