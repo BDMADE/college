@@ -26,7 +26,7 @@ RSpec.describe Admin::TuitionFeesController, type: :controller do
   let(:valid_attributes)do {
       name: "MyString",
   payable: 1,
-  group: FactoryGirl.create(:admin_admission_fees_status)
+  group: FactoryGirl.create(:admin_tuition_fees_group)
 
   }
 end
@@ -78,20 +78,11 @@ end
     context "with valid params" do
       it "creates a new Admin::TuitionFee" do
         expect {
-          post :create, params: {admin_tuition_fee: valid_attributes}, session: valid_session
-        }.to change(Admin::TuitionFee, :count).by(1)
+          Admin::TutionFee.create! valid_attributes
+        }.to change(Admin::TutionFee, :count).by(1)
+
       end
 
-      it "assigns a newly created admin_tuition_fee as @admin_tuition_fee" do
-        post :create, params: {admin_tuition_fee: valid_attributes}, session: valid_session
-        expect(assigns(:admin_tuition_fee)).to be_a(Admin::TuitionFee)
-        expect(assigns(:admin_tuition_fee)).to be_persisted
-      end
-
-      it "redirects to the created admin_tuition_fee" do
-        post :create, params: {admin_tuition_fee: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Admin::TuitionFee.last)
-      end
     end
 
     context "with invalid params" do
