@@ -5,8 +5,9 @@ RSpec.describe "admin/tuition_fees/new", type: :view do
     assign(:admin_tuition_fee, Admin::TuitionFee.new(
       :name => "MyString",
       :payable => 1,
-      :group => nil
-    ))
+      :group =>  FactoryGirl.create(:admin_tuition_fees_group)
+    )
+    )
   end
 
   it "renders new admin_tuition_fee form" do

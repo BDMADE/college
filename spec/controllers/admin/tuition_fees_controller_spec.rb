@@ -77,13 +77,15 @@ end
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Admin::TuitionFee" do
+        tution = Admin::TuitionFee.create! valid_attributes
         expect {
-          Admin::TutionFee.create! valid_attributes
+          Admin::NoticeBoardT.create!(valid_attributes)
         }.to change(Admin::TutionFee, :count).by(1)
 
       end
 
     end
+
 
     context "with invalid params" do
       it "assigns a newly created but unsaved admin_tuition_fee as @admin_tuition_fee" do
@@ -103,7 +105,7 @@ end
       let(:new_attributes) do{
           name: "MyString1",
           payable: 2,
-          group: FactoryGirl.create(:admin_admission_fees_statuses)
+          group: FactoryGirl.create(:admin_tution_fees_group,name: "az")
 
 
       }end

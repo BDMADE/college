@@ -32,6 +32,9 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
-  end
 
+  end
+  config.before(:all) do
+    FactoryGirl.reload
+  end
 end
