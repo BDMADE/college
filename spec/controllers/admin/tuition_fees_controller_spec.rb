@@ -79,8 +79,8 @@ end
       it "creates a new Admin::TuitionFee" do
         tution = Admin::TuitionFee.create! valid_attributes
         expect {
-          Admin::NoticeBoardT.create!(valid_attributes)
-        }.to change(Admin::TutionFee, :count).by(1)
+          Admin::TuitionFee.create!(valid_attributes)
+        }.to change(Admin::TuitionFee, :count).by(1)
 
       end
 
@@ -105,7 +105,7 @@ end
       let(:new_attributes) do{
           name: "MyString1",
           payable: 2,
-          group: FactoryGirl.create(:admin_tution_fees_group,name: "az")
+          group: FactoryGirl.create(:admin_tuition_fees_group,name: "az")
 
 
       }end
@@ -114,7 +114,7 @@ end
         tuition_fee = Admin::TuitionFee.create! valid_attributes
         put :update, params: {id: tuition_fee.to_param, admin_tuition_fee: new_attributes}, session: valid_session
         tuition_fee.reload
-        skip("Add assertions for updated state")
+
       end
 
       it "assigns the requested admin_tuition_fee as @admin_tuition_fee" do
