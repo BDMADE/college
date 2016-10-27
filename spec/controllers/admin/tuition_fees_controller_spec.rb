@@ -75,7 +75,6 @@ RSpec.describe Admin::TuitionFeesController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Admin::TuitionFee" do
-        tution = Admin::TuitionFee.create! valid_attributes
         expect {
           Admin::TuitionFee.create!(valid_attributes)
         }.to change(Admin::TuitionFee, :count).by(1)
