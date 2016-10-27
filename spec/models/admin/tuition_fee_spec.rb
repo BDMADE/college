@@ -4,5 +4,4 @@ RSpec.describe Admin::TuitionFee, type: :model do
   it { is_expected.to validate_presence_of :name }
   it { is_expected.to validates_uniqueness_of :name }
   it { is_expected.to validate_presence_of :payable }
-
 end
