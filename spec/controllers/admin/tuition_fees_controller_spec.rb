@@ -25,18 +25,16 @@ RSpec.describe Admin::TuitionFeesController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes)do {
       name: "MyString",
-  payable: 1,
-  group: FactoryGirl.create(:admin_tuition_fees_group)
-
+      payable: 1,
+      group: FactoryGirl.create(:admin_tuition_fees_group)
   }
-end
+  end
   let(:invalid_attributes)do {
-
-      name: "",
+      name: '',
       payable: '',
       group: ''
-
-  }end
+  }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -159,5 +157,5 @@ end
       expect(response).to redirect_to(admin_tuition_fees_url)
     end
   end
-
+  
 end
