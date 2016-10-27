@@ -71,6 +71,15 @@ ActiveRecord::Schema.define(version: 20161021184032) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "admin_tuition_fees", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "payable"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_admin_tuition_fees_on_group_id"
+  end
+
   create_table "admin_tuition_fees_groups", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
