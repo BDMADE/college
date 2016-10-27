@@ -79,9 +79,7 @@ RSpec.describe Admin::TuitionFeesController, type: :controller do
         expect {
           Admin::TuitionFee.create!(valid_attributes)
         }.to change(Admin::TuitionFee, :count).by(1)
-
       end
-
     end
 
 
@@ -104,15 +102,13 @@ RSpec.describe Admin::TuitionFeesController, type: :controller do
           name: "MyString1",
           payable: 2,
           group: FactoryGirl.create(:admin_tuition_fees_group,name: "az")
-
-
-      }end
+      }
+      end
 
       it "updates the requested admin_tuition_fee" do
         tuition_fee = Admin::TuitionFee.create! valid_attributes
         put :update, params: {id: tuition_fee.to_param, admin_tuition_fee: new_attributes}, session: valid_session
         tuition_fee.reload
-
       end
 
       it "assigns the requested admin_tuition_fee as @admin_tuition_fee" do
@@ -156,6 +152,5 @@ RSpec.describe Admin::TuitionFeesController, type: :controller do
       delete :destroy, params: {id: tuition_fee.to_param}, session: valid_session
       expect(response).to redirect_to(admin_tuition_fees_url)
     end
-  end
-  
+  end  
 end
