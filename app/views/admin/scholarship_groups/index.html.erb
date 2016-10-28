@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Scholarship Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_scholarship_groups.each do |admin_scholarship_group| %>
+      <tr>
+        <td><%= admin_scholarship_group.name %></td>
+        <td><%= link_to 'Show', admin_scholarship_group %></td>
+        <td><%= link_to 'Edit', edit_admin_scholarship_group_path(admin_scholarship_group) %></td>
+        <td><%= link_to 'Destroy', admin_scholarship_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Scholarship Group', new_admin_scholarship_group_path %>

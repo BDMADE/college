@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :scholarship_groups
+  end
+  namespace :admin do
     resources :semesters, :departments, :abouts, :notice_boards,:admission_eligibilities,:tuition_fees_groups,:tuition_fees,:admission_fees_statuses
   #namespace :admin do
     #resources :admission_fees_statuses
