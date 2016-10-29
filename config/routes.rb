@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :scholarships
+  end
+  namespace :admin do
     resources :scholarship_groups
   end
   namespace :admin do

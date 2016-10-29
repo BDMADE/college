@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_scholarship.name %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @admin_scholarship.discount %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @admin_scholarship.condition %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @admin_scholarship.details %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @admin_scholarship.group %>
+</p>
+
+<%= link_to 'Edit', edit_admin_scholarship_path(@admin_scholarship) %> |
+<%= link_to 'Back', admin_scholarships_path %>
