@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Admin::Scholarship, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { is_expected.to validate_presence_of :name }
+  it { is_expected.to validate_presence_of :discount }
+  it { is_expected.to validate_presence_of :condition}
+  it { is_expected.to validate_presence_of :details }
+  it { is_expected.to validate_uniqueness_of :name }
 end
