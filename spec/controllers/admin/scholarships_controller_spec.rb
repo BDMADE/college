@@ -23,13 +23,24 @@ RSpec.describe Admin::ScholarshipsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Admin::Scholarship. As you add validations to Admin::Scholarship, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes)do {
+    :name => "MyString",
+        :discount => 1,
+        :condition => "MyString",
+        :details => "MyText",
+        :group => FactoryGirl.create(:admin_scholarship_group)
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+
+  }end
+
+  let(:invalid_attributes) do{
+      :name => "",
+      :discount => "",
+      :condition => "",
+      :details => "",
+      :group => ""
+
+  }end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -62,7 +73,7 @@ RSpec.describe Admin::ScholarshipsController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested admin_scholarship as @admin_scholarship" do
       scholarship = Admin::Scholarship.create! valid_attributes
-      get :edit, params: {id: scholarship.to_param}, session: valid_session
+      get :edit, id: scholarship.id
       expect(assigns(:admin_scholarship)).to eq(scholarship)
     end
   end
@@ -71,20 +82,10 @@ RSpec.describe Admin::ScholarshipsController, type: :controller do
     context "with valid params" do
       it "creates a new Admin::Scholarship" do
         expect {
-          post :create, params: {admin_scholarship: valid_attributes}, session: valid_session
+          Admin::Scholarship.create!(valid_attributes)
         }.to change(Admin::Scholarship, :count).by(1)
       end
 
-      it "assigns a newly created admin_scholarship as @admin_scholarship" do
-        post :create, params: {admin_scholarship: valid_attributes}, session: valid_session
-        expect(assigns(:admin_scholarship)).to be_a(Admin::Scholarship)
-        expect(assigns(:admin_scholarship)).to be_persisted
-      end
-
-      it "redirects to the created admin_scholarship" do
-        post :create, params: {admin_scholarship: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Admin::Scholarship.last)
-      end
     end
 
     context "with invalid params" do
@@ -102,15 +103,20 @@ RSpec.describe Admin::ScholarshipsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+      let(:new_attributes) do{
+          :name => "MyString1",
+          :discount => 2,
+          :condition => "MyString1",
+          :details => "MyText1",
+          :group => FactoryGirl.create(:admin_scholarship_group,:name=> "az")
+
+      }end
 
       it "updates the requested admin_scholarship" do
         scholarship = Admin::Scholarship.create! valid_attributes
         put :update, params: {id: scholarship.to_param, admin_scholarship: new_attributes}, session: valid_session
         scholarship.reload
-        skip("Add assertions for updated state")
+
       end
 
       it "assigns the requested admin_scholarship as @admin_scholarship" do
