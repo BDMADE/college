@@ -20,6 +20,6 @@ RSpec.describe "admin/scholarships/index", type: :view do
     assert_select "tr>td", :text => 2.to_s, :count => 1
     assert_select "tr>td", :text => "Condition".to_s, :count => 1
     assert_select "tr>td", :text => "MyText".to_s, :count => 1
-    #assert_select "tr>td", :text => nil.to_s, :count => 1
+    assert_select "tr>td", :text => "az".to_s, :count => 1
   end
 end
