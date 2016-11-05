@@ -7,7 +7,7 @@ RSpec.describe "admin/scholarships/show", type: :view do
       :discount => 2,
       :condition => "Condition",
       :details => "MyText",
-      :group => FactoryGirl.create(:admin_scholarship_group)
+      :group => FactoryGirl.create(:admin_scholarship_group, :name=>"az")
     ))
   end
 

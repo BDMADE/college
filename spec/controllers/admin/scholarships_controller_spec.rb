@@ -29,8 +29,6 @@ RSpec.describe Admin::ScholarshipsController, type: :controller do
         :condition => "MyString",
         :details => "MyText",
         :group => FactoryGirl.create(:admin_scholarship_group)
-
-
   }end
 
   let(:invalid_attributes) do{
@@ -39,9 +37,7 @@ RSpec.describe Admin::ScholarshipsController, type: :controller do
       :condition => "",
       :details => "",
       :group => ""
-
   }end
-
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # Admin::ScholarshipsController. Be sure to keep this updated too.
@@ -85,7 +81,6 @@ RSpec.describe Admin::ScholarshipsController, type: :controller do
           Admin::Scholarship.create!(valid_attributes)
         }.to change(Admin::Scholarship, :count).by(1)
       end
-
     end
 
     context "with invalid params" do
@@ -109,7 +104,6 @@ RSpec.describe Admin::ScholarshipsController, type: :controller do
           :condition => "MyString1",
           :details => "MyText1",
           :group => FactoryGirl.create(:admin_scholarship_group,:name=> "az")
-
       }end
 
       it "updates the requested admin_scholarship" do
