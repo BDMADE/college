@@ -1,0 +1,42 @@
+<%= form_for(admin_scholarship) do |f| %>
+  <% if admin_scholarship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_scholarship.errors.count, "error") %> prohibited this admin_scholarship from being saved:</h2>
+
+      <ul>
+      <% admin_scholarship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :discount %>
+    <%= f.number_field :discount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :condition %>
+    <%= f.text_field :condition %>
+  </div>
+
+  <div class="field">
+    <%= f.label :details %>
+    <%= f.text_area :details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :group_id %>
+    <%= f.collection_select :group_id, Admin::ScholarshipGroup.all,:id,:name,{ prompt:true }%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
