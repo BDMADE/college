@@ -17,6 +17,6 @@ RSpec.describe "admin/scholarships/show", type: :view do
     expect(rendered).to match(/2/)
     expect(rendered).to match(/Condition/)
     expect(rendered).to match(/MyText/)
-    expect(rendered).to match(//)
+    expect(rendered).to match(/az/)
   end
 end

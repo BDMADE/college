@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= f.label :group_id %>
-    <%= f.select :group_id, Admin::ScholarshipGroup.all.map{|s|[s.name,s.id]} %>
+    <%= f.collection_select :group_id, Admin::ScholarshipGroup.all,:id,:name,{ prompt:true }%>
   </div>
 
   <div class="actions">

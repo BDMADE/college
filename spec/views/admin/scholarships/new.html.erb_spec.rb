@@ -25,7 +25,7 @@ RSpec.describe "admin/scholarships/new", type: :view do
 
       assert_select "textarea#admin_scholarship_details[name=?]", "admin_scholarship[details]"
 
-     # assert_select "input#admin_scholarship_group_id[name=?]", "admin_scholarship[group_id]"
+      assert_select "select#admin_scholarship_group_id[name=?]", "admin_scholarship[group_id]"
     end
   end
 end
