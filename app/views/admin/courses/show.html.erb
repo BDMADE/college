@@ -2,12 +2,11 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @admin_course.name %>
-</p>
-
-<p>
+  <%= @admin_course.name %> &nbsp,&nbsp
   <strong>Description:</strong>
-  <%= @admin_course.description %>
+  <%= @admin_course.description %> &nbsp,&nbsp
+  <strong>Image:</strong>
+<%= image_tag @admin_course.image.url(:thumb) %>
 </p>
 
 <%= link_to 'Edit', edit_admin_course_path(@admin_course) %> |
