@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_course.name %>
+</p>  
+  <strong>Description:</strong>
+  <%= @admin_course.description %>
+<p>  
+  <strong>Image:</strong>
+  <%= image_tag @admin_course.image.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_course_path(@admin_course) %> |
+<%= link_to 'Back', admin_courses_path %>
