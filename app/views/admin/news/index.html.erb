@@ -15,7 +15,7 @@
     <% @admin_news.each do |admin_news| %>
       <tr>
         <td><%= admin_news.name %></td>
-        <td><%= admin_news.description %></td>&nbsp
+        <td><%= admin_news.description %></td>
         <td><%= image_tag admin_news.image.url(:thumb) %></td>
         <td><%= link_to 'Show', admin_news %></td>
         <td><%= link_to 'Edit', edit_admin_news_path(admin_news) %></td>
