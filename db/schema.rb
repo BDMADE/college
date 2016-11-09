@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108233417) do
+ActiveRecord::Schema.define(version: 20161109124138) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -53,6 +53,18 @@ ActiveRecord::Schema.define(version: 20161108233417) do
     t.string   "short_form"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "place"
+    t.date     "event_date"
+    t.string   "starting_time"
+    t.string   "ending_time"
+    t.integer  "icon_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["icon_id"], name: "index_admin_events_on_icon_id"
   end
 
   create_table "admin_icons", force: :cascade do |t|
