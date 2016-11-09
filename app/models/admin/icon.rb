@@ -4,5 +4,3 @@ class Admin::Icon < ApplicationRecord
   validates_presence_of :icon
   validates_uniqueness_of :icon
 end
-
-
