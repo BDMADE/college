@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Event date</th>
+      <th>Starting time</th>
+      <th>Ending time</th>
+      <th>Icon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_events.each do |admin_event| %>
+      <tr>
+        <td><%= admin_event.name %></td>
+        <td><%= admin_event.event_date %></td>
+        <td><%= admin_event.starting_time %></td>
+        <td><%= admin_event.ending_time %></td>
+        <td><%= admin_event.icon.name %></td>
+        <td><%= link_to 'Show', admin_event %></td>
+        <td><%= link_to 'Edit', edit_admin_event_path(admin_event) %></td>
+        <td><%= link_to 'Destroy', admin_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Event', new_admin_event_path %>

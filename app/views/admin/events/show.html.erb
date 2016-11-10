@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_event.name %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @admin_event.event_date %>
+</p>
+
+<p>
+  <strong>Starting time:</strong>
+  <%= @admin_event.starting_time %>
+</p>
+
+<p>
+  <strong>Ending time:</strong>
+  <%= @admin_event.ending_time %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @admin_event.icon.name %>
+</p>
+
+<%= link_to 'Edit', edit_admin_event_path(@admin_event) %> |
+<%= link_to 'Back', admin_events_path %>
