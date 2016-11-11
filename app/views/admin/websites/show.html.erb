@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_website.name %>
+  logo:<%= image_tag @admin_website.logo.url(:thumb) %>
+  favicon:<%= image_tag @admin_website.favicon.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_website_path(@admin_website) %> |
+<%= link_to 'Back', admin_websites_path %>
