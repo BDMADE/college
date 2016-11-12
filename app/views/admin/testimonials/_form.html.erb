@@ -1,0 +1,41 @@
+<%= form_for(admin_testimonial) do |f| %>
+  <% if admin_testimonial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_testimonial.errors.count, "error") %> prohibited this admin_testimonial from being saved:</h2>
+
+      <ul>
+      <% admin_testimonial.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :department_id %>
+    <%= f.collection_select :department_id, Admin::Department.all,:id,:name,{ prompt:true }%>
+  </div>
+
+  <div class="field">
+    <%= f.label :semester_id %>
+    <%= f.collection_select :semester_id, Admin::Semester.all,:id,:name,{ prompt:true }%>
+  </div>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

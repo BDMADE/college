@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Testimonials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Department</th>
+      <th>Semester</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_testimonials.each do |admin_testimonial| %>
+      <tr>
+        <td><%= admin_testimonial.name %></td>
+        <td><%= admin_testimonial.description %></td>
+        <td><%= admin_testimonial.department %></td>
+        <td><%= admin_testimonial.semester %></td>
+        <td><%= link_to 'Show', admin_testimonial %></td>
+        <td><%= link_to 'Edit', edit_admin_testimonial_path(admin_testimonial) %></td>
+        <td><%= link_to 'Destroy', admin_testimonial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Testimonial', new_admin_testimonial_path %>

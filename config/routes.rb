@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
+    resources :testimonials
+  end
+  namespace :admin do
     resources :semesters, :departments, :abouts, :notice_boards,:admission_eligibilities,:tuition_fees_groups,:tuition_fees,
               :admission_fees_statuses,:scholarship_groups,:scholarships,:courses,:news,:icons,:events,:websites,
               :quick_links
