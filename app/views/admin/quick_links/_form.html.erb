@@ -1,0 +1,27 @@
+<%= form_for(admin_quick_link) do |f| %>
+  <% if admin_quick_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_quick_link.errors.count, "error") %> prohibited this admin_quick_link from being saved:</h2>
+
+      <ul>
+      <% admin_quick_link.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

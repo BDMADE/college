@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_quick_link.name %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @admin_quick_link.link %>
+</p>
+
+<%= link_to 'Edit', edit_admin_quick_link_path(@admin_quick_link) %> |
+<%= link_to 'Back', admin_quick_links_path %>
