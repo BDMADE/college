@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_testimonial.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_testimonial.description %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @admin_testimonial.department.name %>
+</p>
+
+<p>
+  <strong>Semester:</strong>
+  <%= @admin_testimonial.semester.name %>
+</p>
+image:<%= image_tag@admin_testimonial.image.url(:thumb) %>
+
+<%= link_to 'Edit', edit_admin_testimonial_path(@admin_testimonial) %> |
+<%= link_to 'Back', admin_testimonials_path %>
