@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Google Maps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Google api key</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_google_maps.each do |admin_google_map| %>
+      <tr>
+        <td><%= admin_google_map.name %></td>
+        <td><%= admin_google_map.latitude %></td>
+        <td><%= admin_google_map.longitude %></td>
+        <td><%= admin_google_map.google_api_key %></td>
+        <td><%= link_to 'Show', admin_google_map %></td>
+        <td><%= link_to 'Edit', edit_admin_google_map_path(admin_google_map) %></td>
+        <td><%= link_to 'Destroy', admin_google_map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Google Map', new_admin_google_map_path %>
