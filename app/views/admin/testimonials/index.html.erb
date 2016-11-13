@@ -18,8 +18,8 @@
       <tr>
         <td><%= admin_testimonial.name %></td>
         <td><%= admin_testimonial.description %></td>
-        <td><%= admin_testimonial.department %></td>
-        <td><%= admin_testimonial.semester %></td>
+        <td><%= admin_testimonial.department.name %></td>
+        <td><%= admin_testimonial.semester.name %></td>
         <td><%= link_to 'Show', admin_testimonial %></td>
         <td><%= link_to 'Edit', edit_admin_testimonial_path(admin_testimonial) %></td>
         <td><%= link_to 'Destroy', admin_testimonial, method: :delete, data: { confirm: 'Are you sure?' } %></td>

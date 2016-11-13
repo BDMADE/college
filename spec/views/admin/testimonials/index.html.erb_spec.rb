@@ -6,14 +6,8 @@ RSpec.describe "admin/testimonials/index", type: :view do
       Admin::Testimonial.create!(
           name:"Name",
           description: "MyText",
-          department: FactoryGirl.create(:admin_department),
-          semester: FactoryGirl.create(:admin_semester)
-      ),
-      Admin::Testimonial.create!(
-          name:"Name1",
-          description: "MyText",
-          department: FactoryGirl.create(:admin_department,:name=>"az",:short_form=>"ist"),
-          semester: FactoryGirl.create(:admin_semester,:name=>"az",:short_form=>"ist")
+          department: FactoryGirl.create(:admin_department,:name=>"phy",:short_form=>"ph"),
+          semester: FactoryGirl.create(:admin_semester,:name=>"first",:short_form=>"1st")
       )
     ])
   end
@@ -21,8 +15,8 @@ RSpec.describe "admin/testimonials/index", type: :view do
   it "renders a list of admin/testimonials" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 1
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 0
-    assert_select "tr>td", :text => nil.to_s, :count => 0
+    assert_select "tr>td", :text => "MyText".to_s, :count => 1
+    assert_select "tr>td", :text =>"phy".to_s, :count => 1
+    assert_select "tr>td", :text => "first".to_s, :count => 1
   end
 end

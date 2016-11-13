@@ -5,8 +5,8 @@ RSpec.describe "admin/testimonials/show", type: :view do
     @admin_testimonial = assign(:admin_testimonial, Admin::Testimonial.create!(
         name:"MyString1",
         description: "MyText1",
-        department: FactoryGirl.create(:admin_department,:name=>"az",:short_form=>"ist"),
-        semester: FactoryGirl.create(:admin_semester,:name=>"az",:short_form=>"ist")
+        department: FactoryGirl.create(:admin_department,:name=>"chem",:short_form=>"CH"),
+        semester: FactoryGirl.create(:admin_semester,:name=>"second",:short_form=>"2nd")
     ))
   end
 
@@ -14,7 +14,7 @@ RSpec.describe "admin/testimonials/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/MyText/)
-    expect(rendered).to match(/az/)
-    expect(rendered).to match(/az/)
+    expect(rendered).to match(/chem/)
+    expect(rendered).to match(/second/)
   end
 end
