@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112155558) do
+ActiveRecord::Schema.define(version: 20161113184923) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(version: 20161112155558) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["icon_id"], name: "index_admin_events_on_icon_id"
+  end
+
+  create_table "admin_google_maps", force: :cascade do |t|
+    t.string   "name"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "google_api_key"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "admin_icons", force: :cascade do |t|

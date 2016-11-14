@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_google_map.name %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @admin_google_map.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @admin_google_map.longitude %>
+</p>
+
+<p>
+  <strong>Google api key:</strong>
+  <%= @admin_google_map.google_api_key %>
+</p>
+
+<%= link_to 'Edit', edit_admin_google_map_path(@admin_google_map) %> |
+<%= link_to 'Back', admin_google_maps_path %>
