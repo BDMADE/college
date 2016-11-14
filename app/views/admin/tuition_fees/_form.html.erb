@@ -23,8 +23,12 @@
 
   <div class="field">
     <%= f.label :group_id %>
-    <%= f.text_field :group_id %>
+    <%= f.collection_select :group_id, Admin::TuitionFeesGroup.all,:id,:name%>
   </div>
+    <div class="field">
+      <%= f.label :admin_admission_fees_status_ids%>
+      <%= f.collection_select :admin_admission_fees_status_ids,Admin::AdmissionFeesStatus.all, :id, :name, {:prompt => true}, {multiple: true} %>
+    </div>
 
   <div class="actions">
     <%= f.submit %>
