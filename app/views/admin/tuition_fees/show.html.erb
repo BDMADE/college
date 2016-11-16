@@ -17,7 +17,7 @@
 </p>
 <p>
   <strong>Status:</strong>
-  <%= @admin_tuition_fee.admin_admission_fees_statuses.map(&:name).join(' , ') %>
+  <%= @admin_tuition_fee.admin_admission_fees_statuses.map{|s| s.name}.join(' , ') %>
 </p>
 
 
