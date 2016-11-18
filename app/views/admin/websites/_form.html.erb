@@ -4,9 +4,9 @@
       <h2><%= pluralize(admin_website.errors.count, "error") %> prohibited this admin_website from being saved:</h2>
 
       <ul>
-      <% admin_website.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% admin_website.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -15,14 +15,18 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-    <div class="field">
-      <%= f.label :logo %>
-      <%= f.file_field :logo %>
-    </div>
-    <div class="field">
-      <%= f.label :favicon %>
-      <%= f.file_field :favicon %>
-    </div>
+  <div class="field">
+    <%= f.label :details %>
+    <%= f.text_area :details %>
+  </div>
+  <div class="field">
+    <%= f.label :logo %>
+    <%= f.file_field :logo %>
+  </div>
+  <div class="field">
+    <%= f.label :favicon %>
+    <%= f.file_field :favicon %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

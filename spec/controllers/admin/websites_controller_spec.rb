@@ -24,11 +24,13 @@ RSpec.describe Admin::WebsitesController, type: :controller do
   # Admin::Website. As you add validations to Admin::Website, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes)do {
-      name: "MyString"
+      name: "MyString",
+      details:'This is details page'
   }end
 
   let(:invalid_attributes)do {
-    name: ""
+    name: nil,
+    details: nil
   }end
 
   # This should return the minimal set of values that should be in the session
