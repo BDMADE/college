@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :group_id %>
-    <%= f.collection_select :group_id, Admin::TuitionFeesGroup.all,:id,:name%>
+    <%= f.collection_select :group_id, Admin::TuitionFeesGroup.all,:id,:name, prompt: true %>
   </div>
     <div class="field">
       <%= f.label :admin_admission_fees_status_ids%>

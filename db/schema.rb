@@ -156,8 +156,12 @@ ActiveRecord::Schema.define(version: 20161114164404) do
     t.text     "description"
     t.integer  "department_id"
     t.integer  "semester_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["department_id"], name: "index_admin_testimonials_on_department_id"
     t.index ["semester_id"], name: "index_admin_testimonials_on_semester_id"
   end

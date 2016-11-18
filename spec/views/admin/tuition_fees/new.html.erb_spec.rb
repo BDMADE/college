@@ -19,7 +19,7 @@ RSpec.describe "admin/tuition_fees/new", type: :view do
 
       assert_select "input#admin_tuition_fee_payable[name=?]", "admin_tuition_fee[payable]"
 
-      assert_select "input#admin_tuition_fee_group_id[name=?]", "admin_tuition_fee[group_id]"
+      assert_select "select#admin_tuition_fee_group_id[name=?]", "admin_tuition_fee[group_id]"
     end
   end
 end
