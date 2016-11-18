@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113184923) do
+ActiveRecord::Schema.define(version: 20161114164404) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 20161113184923) do
     t.integer  "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_admission_fees_statuses_admin_tuition_fees", id: false, force: :cascade do |t|
+    t.integer "admission_fees_status_id"
+    t.integer "tuition_fee_id"
+    t.index ["admission_fees_status_id", "tuition_fee_id"], name: "index_admin_admission_fees_statuses_tuition_fees"
   end
 
   create_table "admin_courses", force: :cascade do |t|

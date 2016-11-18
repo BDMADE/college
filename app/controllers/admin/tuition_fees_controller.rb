@@ -53,6 +53,6 @@ class Admin::TuitionFeesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_tuition_fee_params
-      params.require(:admin_tuition_fee).permit(:name, :payable, :group_id)
+      params.require(:admin_tuition_fee).permit(:name, :payable, :group_id,admin_admission_fees_status_ids: [])
     end
 end

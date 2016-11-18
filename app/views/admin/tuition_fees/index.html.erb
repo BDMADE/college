@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Payable</th>
       <th>Group</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +18,8 @@
       <tr>
         <td><%= admin_tuition_fee.name %></td>
         <td><%= admin_tuition_fee.payable %></td>
-        <td><%= admin_tuition_fee.group %></td>
+        <td><%= admin_tuition_fee.group.name%></td>
+        <td><%= admin_tuition_fee.admin_admission_fees_statuses.map(&:name).join(' , ') %></td>
         <td><%= link_to 'Show', admin_tuition_fee %></td>
         <td><%= link_to 'Edit', edit_admin_tuition_fee_path(admin_tuition_fee) %></td>
         <td><%= link_to 'Destroy', admin_tuition_fee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
