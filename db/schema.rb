@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114164404) do
+ActiveRecord::Schema.define(version: 20161118092124) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -193,6 +193,7 @@ ActiveRecord::Schema.define(version: 20161114164404) do
     t.string   "favicon_content_type"
     t.integer  "favicon_file_size"
     t.datetime "favicon_updated_at"
+    t.text     "details"
   end
 
 end

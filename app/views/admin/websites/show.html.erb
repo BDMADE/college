@@ -3,6 +3,8 @@
 <p>
   <strong>Name:</strong>
   <%= @admin_website.name %>
+  <strong>Details:</strong>
+  <%= @admin_website.details %>
   logo:<%= image_tag @admin_website.logo.url(:thumb) %>
   favicon:<%= image_tag @admin_website.favicon.url(:medium) %>
 </p>
