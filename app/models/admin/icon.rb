@@ -4,4 +4,5 @@ class Admin::Icon < ApplicationRecord
   validates_uniqueness_of :name
   validates_presence_of :icon
   validates_uniqueness_of :icon
+  has_many :admin_postal_types, :class_name => 'Admin::PostalType',inverse_of: :admin_icon
 end
