@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Postals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Details</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_postals.each do |admin_postal| %>
+      <tr>
+        <td><%= admin_postal.name %></td>
+        <td><%= admin_postal.details %></td>
+        <td><%= admin_postal.type.name %></td>
+        <td><%= link_to 'Show', admin_postal %></td>
+        <td><%= link_to 'Edit', edit_admin_postal_path(admin_postal) %></td>
+        <td><%= link_to 'Destroy', admin_postal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Postal', new_admin_postal_path %>
