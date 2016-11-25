@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Link</th>
+      <th>Details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_videos.each do |admin_video| %>
+      <tr>
+        <td><%= admin_video.name %></td>
+        <td><%= admin_video.link %></td>
+        <td><%= admin_video.details %></td>
+        <td><%= link_to 'Show', admin_video %></td>
+        <td><%= link_to 'Edit', edit_admin_video_path(admin_video) %></td>
+        <td><%= link_to 'Destroy', admin_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Video', new_admin_video_path %>
