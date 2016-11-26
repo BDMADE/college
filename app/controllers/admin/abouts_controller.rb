@@ -1,5 +1,6 @@
 class Admin::AboutsController < ApplicationController
   before_action :set_admin_about, only: [:show, :edit, :update, :destroy]
+  layout 'college/base'
 
   # GET /admin/abouts
   def index

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<%= render 'layouts/college/head' %>
+
+<body class="home-page">
+<div class="wrapper">
+
+  <%= render 'layouts/college/header' %>
+  <%= render 'layouts/college/nav' %>
+  <!--//main-nav-->
+
+
+  <div class="content container">
+    <div class="page-wrapper">
+      <%= render 'layouts/college/breadcumbs' %>
+      <div class="page-content">
+        <div class="row page-row">
+          <%= yield %>
+        </div><!--//page-row-->
+      </div><!--//page-content-->
+    </div><!--//page-->
+  </div><!--//content-->
+</div><!--//wrapper-->
+
+<!-- ******FOOTER****** -->
+<%= render 'layouts/college/footer' %>
+<!-- Javascript -->
+<%= render 'layouts/college/js' %>
+</div>
+</body>
+</html>
+
