@@ -1,0 +1,32 @@
+<%= form_for(admin_video) do |f| %>
+  <% if admin_video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_video.errors.count, "error") %> prohibited this admin_video from being saved:</h2>
+
+      <ul>
+      <% admin_video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+  <div class="field">
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

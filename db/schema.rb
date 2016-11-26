@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119200723) do
+ActiveRecord::Schema.define(version: 20161125165700) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -128,6 +128,15 @@ ActiveRecord::Schema.define(version: 20161119200723) do
     t.index ["icon_id"], name: "index_admin_postal_types_on_icon_id"
   end
 
+  create_table "admin_postals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "details"
+    t.integer  "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type_id"], name: "index_admin_postals_on_type_id"
+  end
+
   create_table "admin_quick_links", force: :cascade do |t|
     t.string   "name"
     t.string   "link"
@@ -185,6 +194,14 @@ ActiveRecord::Schema.define(version: 20161119200723) do
 
   create_table "admin_tuition_fees_groups", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_videos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.string   "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

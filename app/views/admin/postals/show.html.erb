@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_postal.name %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @admin_postal.details %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @admin_postal.type.name %>
+</p>
+
+<%= link_to 'Edit', edit_admin_postal_path(@admin_postal) %> |
+<%= link_to 'Back', admin_postals_path %>

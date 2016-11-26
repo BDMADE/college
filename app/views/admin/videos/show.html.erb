@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_video.name %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @admin_video.link %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @admin_video.details %>
+</p>
+
+<%= link_to 'Edit', edit_admin_video_path(@admin_video) %> |
+<%= link_to 'Back', admin_videos_path %>

@@ -1,0 +1,32 @@
+<%= form_for(admin_postal) do |f| %>
+  <% if admin_postal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_postal.errors.count, "error") %> prohibited this admin_postal from being saved:</h2>
+
+      <ul>
+      <% admin_postal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type_id %>
+    <%= f.collection_select :type_id ,Admin::PostalType.all.map,:id,:name%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
