@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125165700) do
+ActiveRecord::Schema.define(version: 20161126194813) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -166,6 +166,15 @@ ActiveRecord::Schema.define(version: 20161125165700) do
     t.string   "short_form"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_social_media", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.integer  "icon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["icon_id"], name: "index_admin_social_media_on_icon_id"
   end
 
   create_table "admin_testimonials", force: :cascade do |t|
