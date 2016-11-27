@@ -17,8 +17,8 @@ var scrolltotop={
 
 	scrollup:function(){
 		if (!this.cssfixedsupport) //if control is positioned using JavaScript
-			this.$control.css({opacity:0}) //hide control immediately after clicking it
-		var dest=isNaN(this.setting.scrollto)? this.setting.scrollto : parseInt(this.setting.scrollto)
+			this.$control.css({opacity:0}); //hide control immediately after clicking it
+		var dest=isNaN(this.setting.scrollto)? this.setting.scrollto : parseInt(this.setting.scrollto);
 		if (typeof dest=="string" && jQuery('#'+dest).length==1) //check element set by string exists
 			dest=jQuery('#'+dest).offset().top;
 		else
