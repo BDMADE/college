@@ -20,31 +20,31 @@ var scrolltotop={
 			this.$control.css({opacity:0}) //hide control immediately after clicking it
 		var dest=isNaN(this.setting.scrollto)? this.setting.scrollto : parseInt(this.setting.scrollto)
 		if (typeof dest=="string" && jQuery('#'+dest).length==1) //check element set by string exists
-			dest=jQuery('#'+dest).offset().top
+			dest=jQuery('#'+dest).offset().top;
 		else
-			dest=0
+			dest=0;
 		this.$body.animate({scrollTop: dest}, this.setting.scrollduration);
 	},
 
 	keepfixed:function(){
-		var $window=jQuery(window)
-		var controlx=$window.scrollLeft() + $window.width() - this.$control.width() - this.controlattrs.offsetx
-		var controly=$window.scrollTop() + $window.height() - this.$control.height() - this.controlattrs.offsety
-		this.$control.css({left:controlx+'px', top:controly+'px'})
+		var $window=jQuery(window);
+		var controlx=$window.scrollLeft() + $window.width() - this.$control.width() - this.controlattrs.offsetx;
+		var controly=$window.scrollTop() + $window.height() - this.$control.height() - this.controlattrs.offsety;
+		this.$control.css({left:controlx+'px', top:controly+'px'});
 	},
 
 	togglecontrol:function(){
-		var scrolltop=jQuery(window).scrollTop()
+		var scrolltop=jQuery(window).scrollTop();
 		if (!this.cssfixedsupport)
-			this.keepfixed()
-		this.state.shouldvisible=(scrolltop>=this.setting.startline)? true : false
+			this.keepfixed();
+		this.state.shouldvisible=(scrolltop>=this.setting.startline)? true : false;
 		if (this.state.shouldvisible && !this.state.isvisible){
-			this.$control.stop().animate({opacity:1}, this.setting.fadeduration[0])
-			this.state.isvisible=true
+			this.$control.stop().animate({opacity:1}, this.setting.fadeduration[0]);
+			this.state.isvisible=true;
 		}
-		else if (this.state.shouldvisible==false && this.state.isvisible){
-			this.$control.stop().animate({opacity:0}, this.setting.fadeduration[1])
-			this.state.isvisible=false
+		else if (this.state.shouldvisible===false && this.state.isvisible){
+			this.$control.stop().animate({opacity:0}, this.setting.fadeduration[1]);
+			this.state.isvisible=false;
 		}
 	},
 	
