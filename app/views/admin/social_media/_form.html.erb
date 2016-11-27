@@ -1,0 +1,34 @@
+<%= form_for(admin_social_medium) do |f| %>
+  <% if admin_social_medium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_social_medium.errors.count, "error") %> prohibited this admin_social_medium from being saved:</h2>
+
+      <ul>
+      <% admin_social_medium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+
+    <div class="field">
+      <%= f.label :icon_id %>
+      <%#= f.text_field :icon_id %>
+      <%= f.collection_select :icon_id,Admin::Icon.all.map,:id,:name, prompt:true %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
