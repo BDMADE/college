@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Admission Processes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_admission_processes.each do |admin_admission_process| %>
+      <tr>
+        <td><%= admin_admission_process.step %></td>
+        <td><%= admin_admission_process.name %></td>
+        <td><%= link_to 'Show', admin_admission_process %></td>
+        <td><%= link_to 'Edit', edit_admin_admission_process_path(admin_admission_process) %></td>
+        <td><%= link_to 'Destroy', admin_admission_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Admission Process', new_admin_admission_process_path %>

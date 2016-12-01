@@ -1,0 +1,36 @@
+<%= form_for(admin_admission_process) do |f| %>
+  <% if admin_admission_process.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_admission_process.errors.count, "error") %> prohibited this admin_admission_process from being saved:</h2>
+
+      <ul>
+      <% admin_admission_process.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :step %>
+    <%= f.number_field :step %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+      <%= f.label :admin_admission_process_image %>
+      <div id="admin_admission_process_images">
+        <%= f.fields_for :admin_admission_process_images do |image_form| %>
+            <%= render 'admin/admission_processes/admin_admission_process_image_fields', f: image_form %>
+        <% end %>
+        <%= link_to_add_association 'Add Image',f,:admin_admission_process_images,class: 'btn btn-primary' %>
+      </div>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

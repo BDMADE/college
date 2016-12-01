@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126194813) do
+ActiveRecord::Schema.define(version: 20161130152451) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -41,6 +41,32 @@ ActiveRecord::Schema.define(version: 20161126194813) do
     t.integer "admission_fees_status_id"
     t.integer "tuition_fee_id"
     t.index ["admission_fees_status_id", "tuition_fee_id"], name: "index_admin_admission_fees_statuses_tuition_fees"
+  end
+
+  create_table "admin_admission_process_image_details", force: :cascade do |t|
+    t.text     "details"
+    t.integer  "admission_process_image_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["admission_process_image_id"], name: "admission_process_image_details"
+  end
+
+  create_table "admin_admission_process_images", force: :cascade do |t|
+    t.integer  "admission_process_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["admission_process_id"], name: "index_admin_admission_process_images_on_admission_process_id"
+  end
+
+  create_table "admin_admission_processes", force: :cascade do |t|
+    t.integer  "step"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "admin_courses", force: :cascade do |t|
