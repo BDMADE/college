@@ -1,6 +1,7 @@
 <head>
   <!-- Meta -->
-  <title>Dhaka Engineering Institute</title>
+  <% website =  Admin::Website.last %>
+  <title><%= @title %>-<% unless website.nil? %><%= website.name %><% end %></title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
