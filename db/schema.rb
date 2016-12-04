@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20161130152451) do
   end
 
   create_table "admin_admission_fees_statuses_admin_tuition_fees", id: false, force: :cascade do |t|
-    t.integer "admission_fees_status_id"
-    t.integer "tuition_fee_id"
+    t.integer "admission_fees_status_id", null: false
+    t.integer "tuition_fee_id",           null: false
     t.index ["admission_fees_status_id", "tuition_fee_id"], name: "index_admin_admission_fees_statuses_tuition_fees"
   end
 
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20161130152451) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.index ["admission_process_id"], name: "index_admin_admission_process_images_on_admission_process_id"
+    t.index ["admission_process_id"], name: "admission_process_image_"
   end
 
   create_table "admin_admission_processes", force: :cascade do |t|
