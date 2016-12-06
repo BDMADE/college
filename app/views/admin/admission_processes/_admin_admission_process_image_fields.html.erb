@@ -1,0 +1,20 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+
+    <div class="field">
+      <%= f.label :admission_process_image_details %>
+      <div id="admin_admission_process_image_details">
+        <%= f.fields_for :admin_admission_process_image_details do |details_form| %>
+            <%= render 'admin/admission_processes/admin_admission_process_image_detail_fields', f: details_form %>
+        <% end %>
+        <%= link_to_add_association 'Add Details',f, :admin_admission_process_image_details,class: 'btn btn-primary' %>
+      </div>
+
+    </div>
+
+    <%= link_to_remove_association 'Remove Image',f, class: 'form-button btn btn-default' %>
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Step:</strong>
+  <%= @admin_admission_process.step %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_admission_process.name %>
+<% @admin_admission_process.admin_admission_process_images.each do |i|%>
+<td><%= image_tag i.image.url(:thumb) %></td>
+    <%end%>
+<% @admin_admission_process.admin_admission_process_images.each do|i|%>
+ <%  i.admin_admission_process_image_details.each do |j| %>
+<td><%= j.details %></td>
+<%end%>
+<%end%>
+</p>
+
+<%= link_to 'Edit', edit_admin_admission_process_path(@admin_admission_process) %> |
+<%= link_to 'Back', admin_admission_processes_path %>
