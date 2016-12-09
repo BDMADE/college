@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Subjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Semester</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_subjects.each do |admin_subject| %>
+      <tr>
+        <td><%= admin_subject.name %></td>
+        <td><%= admin_subject.course.name %></td>
+        <td><%= admin_subject.semester.name %></td>
+        <td><%= link_to 'Show', admin_subject %></td>
+        <td><%= link_to 'Edit', edit_admin_subject_path(admin_subject) %></td>
+        <td><%= link_to 'Destroy', admin_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Subject', new_admin_subject_path %>
