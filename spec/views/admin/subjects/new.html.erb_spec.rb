@@ -16,9 +16,9 @@ RSpec.describe "admin/subjects/new", type: :view do
 
       assert_select "input#admin_subject_name[name=?]", "admin_subject[name]"
 
-      assert_select "input#admin_subject_course_id[name=?]", "admin_subject[course_id]"
+      assert_select "select#admin_subject_course_id[name=?]", "admin_subject[course_id]"
 
-      assert_select "input#admin_subject_semester_id[name=?]", "admin_subject[semester_id]"
+      assert_select "select#admin_subject_semester_id[name=?]", "admin_subject[semester_id]"
     end
   end
 end

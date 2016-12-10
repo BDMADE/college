@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :course_id %>
-    <%= f.text_field :course_id %>
+    <%= f.collection_select :course_id, Admin::Course.all, :id, :name, prompt: true %>
   </div>
 
   <div class="field">
     <%= f.label :semester_id %>
-    <%= f.text_field :semester_id %>
+    <%= f.collection_select :semester_id, Admin::Semester.all, :id, :name, prompt: true %>
   </div>
 
   <div class="actions">
