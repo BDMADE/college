@@ -3,4 +3,7 @@ class Admin::Semester < ApplicationRecord
   validates :name, :short_form, uniqueness: true
   has_many :admin_notice_boards, :class_name => 'Admin::NoticeBoard'
   has_many :admin_testimonials, :class_name => 'Admin::Testimonial' ,inverse_of: :semester
+  has_many :admin_subjects, :class_name => 'Admin::Subject',:inverse_of=>"admin_subjects"
 end
+
+
