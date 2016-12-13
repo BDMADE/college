@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_mini_slider.name %>
+<%= image_tag @admin_mini_slider.image.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_mini_slider_path(@admin_mini_slider) %> |
+<%= link_to 'Back', admin_mini_sliders_path %>
