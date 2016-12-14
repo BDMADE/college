@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206162343) do
+ActiveRecord::Schema.define(version: 20161213154311) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -113,6 +113,16 @@ ActiveRecord::Schema.define(version: 20161206162343) do
     t.string   "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_mini_sliders", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "admin_news", force: :cascade do |t|
