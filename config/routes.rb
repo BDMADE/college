@@ -1,4 +1,26 @@
 Rails.application.routes.draw do
+  get 'frontend/home'
+
+  get 'frontend/noticeboard'
+
+  get 'frontend/about'
+
+  get 'frontend/admission_eligibility'
+
+  get 'frontend/tuition_fees'
+
+  get 'frontend/scholarships'
+
+  get 'frontend/how_to_apply'
+
+  get 'frontend/courses'
+
+  get 'frontend/news'
+
+  get 'frontend/event'
+
+  get 'frontend/contact'
+
   namespace :admin do
     resources :mini_sliders
   end
