@@ -4,6 +4,8 @@ class FrontendController < ApplicationController
   end
 
   def noticeboard
+    @title = 'Notice Board'
+    @notices = Admin::NoticeBoard.order(updated_at: :desc)
   end
 
   def about

@@ -1,2 +1,15 @@
-<h1>Frontend#noticeboard</h1>
-<p>Find me in app/views/frontend/noticeboard.html.erb</p>
+
+<style>#font18{font-size:18px;}</style>
+<% @notices.each do |notice| %>
+    <% if notice.notice_type == 'normal' %>
+        <h3><%= notice.name %></h3>
+    <% else %>
+        <h3><%= notice.department.short_form %>-<%= notice.semester.short_form %></h3>
+    <% end %>
+    <% notice.admin_notice_forms.each do |notice_form| %>
+        <div class="alert alert-<%= notice_form.background_color %>" id="font18">
+        <%= notice_form.description.html_safe %>
+        </div>
+    <% end %>
+<% end %>
+
