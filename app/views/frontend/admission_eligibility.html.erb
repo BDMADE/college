@@ -1,2 +1,22 @@
-<h1>Frontend#admission_eligibility</h1>
-<p>Find me in app/views/frontend/admission_eligibility.html.erb</p>
+<div class="faq-wrapper col-md-8 col-sm-7">
+  <div class="panel-group" id="accordion">
+
+    <% @admission_eligibilities.each do |admission_eligibility|  %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-0">
+                <%= admission_eligibility.name %>
+              </a>
+            </h4>
+          </div><!--//pane-heading-->
+          <div id="collapse-0" class="panel-collapse collapse">
+            <div class="panel-body">
+              <%= admission_eligibility.description %>
+            </div><!--//panel-body-->
+          </div><!--//panel-colapse-->
+        </div><!--//panel-->
+    <% end %>
+
+  </div><!--//panel-group-->
+</div><!--//faq-wrapper-->
