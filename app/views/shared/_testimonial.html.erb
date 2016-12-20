@@ -1,0 +1,27 @@
+<% @testimonials = Admin::Testimonial.all %>
+<div class="widget has-divider">
+  <h1 class="section-heading text-highlight"><span class="line">Student Testimonials</span></h1>
+  <div class="section-content">
+    <div id="testimonials-carousel" class="testimonials-carousel carousel slide">
+      <div class="carousel-inner">
+        <% @testimonials.each do |testimonial| %>
+            <% if testimonial.id == 1 %>
+                <div class="item active">
+            <% else %>
+                <div class="item">
+            <% end %>
+            <blockquote class="quote">
+              <p><i class="fa fa-quote-left"></i><%= testimonial.description %></p>
+            </blockquote>
+            <div class="row">
+              <p class="people col-md-8 col-sm-3 col-xs-8"><span class="name"><%= testimonial.name %></span><br />
+                <span class="title">Student(<%= testimonial.department.short_form %>-<%= testimonial.semester.short_form %>)</span></p>
+              <%= image_tag testimonial.image.url(:thumb), class: 'img-responsive img-circle profile col-md-4 pull-right' %>
+            </div>
+            </div><!--//item-->
+        <% end %>
+        </div><!--//carousel-inner-->
+      </div><!--//testimonials-carousel-->
+    </div><!--//section-content-->
+  </div>
+</div>

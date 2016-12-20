@@ -1,0 +1,6 @@
+<% postal_id = Admin::PostalType.find_by(name: 'address').id %>
+<% postal_address = Admin::Postal.find_by(type_id: postal_id) %>
+<div class="widget has-divider">
+  <h3 class="title">Postal Address</h3>
+  <%= postal_address.details.html_safe %>
+</div>

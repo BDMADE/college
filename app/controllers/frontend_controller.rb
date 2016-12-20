@@ -7,6 +7,8 @@ class FrontendController < ApplicationController
   end
 
   def about
+    @title = 'About us'
+    @about = Admin::About.last
   end
 
   def admission_eligibility
