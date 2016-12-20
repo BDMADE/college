@@ -1,7 +1,7 @@
 <h1>Frontend#about</h1>
 <p>Find me in app/views/frontend/about.html.erb</p>
 <article class="welcome col-md-8 col-sm-7">
-  <h3 class="title">Welcome to <%= Admin::About.last.slug %></h3>
+  <h3 class="title">Welcome to <%= @about.slug %></h3>
   <p><%= image_tag @about.image.url(:large) %></p>
   <%= @about.description.html_safe %>
 </article>
