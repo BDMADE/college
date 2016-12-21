@@ -12,6 +12,8 @@ class FrontendController < ApplicationController
   end
 
   def admission_eligibility
+    @title = 'Admission Eligibility'
+    @admission_eligibilities = Admin:: AdmissionEligibility.order(updated_at: :desc)
   end
 
   def tuition_fees
