@@ -1,2 +1,29 @@
-<h1>Frontend#scholarships</h1>
-<p>Find me in app/views/frontend/scholarships.html.erb</p>
+<article class="welcome col-md-12 col-sm-12">
+  <% @scholarship_groups.each do |scholarship_group|  %>
+      <header class="page-heading clearfix">
+        <h2 class="heading-title pull-left"><%= scholarship_group.name %></h2>
+      </header>
+      <% scholarship_group.scholarships.each do |scholarship| %>
+          <div class="col-md-12 col-sm-12">
+            <div class="col-md-2 col-sm-2">
+              <p class="promo-badge">
+                <a class="<%= scholarship_style_change(scholarship)[0] %>">
+                  <span class="percentage"><%= scholarship.discount %>%<span class="off">OFF</span>
+                  </span>
+                  <br>
+                  <span class="desc"><b><%= scholarship.condition.html_safe %></b></span>
+                </a>
+              </p>
+            </div>
+            <br>
+            <div class="col-md-6 col-sm-6">
+              <div class="<%= scholarship_style_change(scholarship)[1] %>">
+                <%= scholarship.details.html_safe %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
+
+</article>
+
