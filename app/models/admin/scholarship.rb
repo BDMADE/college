@@ -1,10 +1,8 @@
 class Admin::Scholarship < ApplicationRecord
-<<<<<<< HEAD
-  belongs_to :group, :class_name=> 'Admin::ScholarshipGroup', inverse_of: 'admin_scholarships'
-  #belongs_to :group, :class_name=> 'Admin::ScholarshipGroup', inverse_of: 'scholarships'
-=======
+
+  #belongs_to :group, :class_name=> 'Admin::ScholarshipGroup', inverse_of: 'admin_scholarships'
   belongs_to :group, :class_name=> 'Admin::ScholarshipGroup', inverse_of: 'scholarships'
->>>>>>> origin/master
+
   validates_presence_of :name
   validates_presence_of :condition
   validates_presence_of :details
