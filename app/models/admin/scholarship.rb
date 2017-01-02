@@ -1,5 +1,4 @@
-class Admin::Scholarship < ApplicationRecord
-  #belongs_to :group, :class_name=> 'Admin::ScholarshipGroup', inverse_of: 'admin_scholarships'
+class Admin::Scholarship < ApplicationRecord  
   belongs_to :group, :class_name=> 'Admin::ScholarshipGroup', inverse_of: 'scholarships'
   validates_presence_of :name
   validates_presence_of :condition
