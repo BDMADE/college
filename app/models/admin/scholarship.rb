@@ -5,5 +5,4 @@ class Admin::Scholarship < ApplicationRecord
   validates_presence_of :details
   validates_presence_of :discount
   validates_uniqueness_of :name
-
 end
