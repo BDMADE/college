@@ -9,7 +9,8 @@ module FrontendHelper
   end
   total_payable = multiple_of_status_values * tuition.payable
   total_payable
-end
+  end
+
 
 def tuition_fees_badge(tuition)
   if tuition.id.odd?
@@ -19,4 +20,5 @@ def tuition_fees_badge(tuition)
   end
   badge
 end
-  end
+end
+
