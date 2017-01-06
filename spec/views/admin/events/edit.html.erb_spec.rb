@@ -4,6 +4,7 @@ RSpec.describe "admin/events/edit", type: :view do
   before(:each) do
     @admin_event = assign(:admin_event, Admin::Event.create!(
       :name => "MyString",
+      :details =>"MyText",
       :starting_time => "MyString",
       :ending_time => "MyString",
       place:"Mystring",
@@ -17,6 +18,8 @@ RSpec.describe "admin/events/edit", type: :view do
     assert_select "form[action=?][method=?]", admin_event_path(@admin_event), "post" do
 
       assert_select "input#admin_event_name[name=?]", "admin_event[name]"
+
+      assert_select "textarea#admin_event_details[name=?]", "admin_event[details]"
 
       assert_select "input#admin_event_starting_time[name=?]", "admin_event[starting_time]"
 

@@ -25,6 +25,7 @@ RSpec.describe Admin::EventsController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) do{
     name: "MyString",
+    details: "MyText",
     event_date: "2016-11-09",
     starting_time: "MyString",
     ending_time: "MyString",
@@ -34,11 +35,12 @@ RSpec.describe Admin::EventsController, type: :controller do
 
   let(:invalid_attributes)do {
     name: "MyString",
-        event_date: "",
-        starting_time: "",
-        ending_time: "",
-       place:"",
-        icon: ''
+    details: "",
+    event_date: "",
+    starting_time: "",
+    ending_time: "",
+    place:"",
+    icon: ''
   }end
 
   # This should return the minimal set of values that should be in the session

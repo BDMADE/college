@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213154311) do
+ActiveRecord::Schema.define(version: 20170106171107) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20161213154311) do
   end
 
   create_table "admin_admission_fees_statuses_admin_tuition_fees", id: false, force: :cascade do |t|
-    t.integer "admission_fees_status_id"
-    t.integer "tuition_fee_id"
+    t.integer "admission_fees_status_id", null: false
+    t.integer "tuition_fee_id",           null: false
     t.index ["admission_fees_status_id", "tuition_fee_id"], name: "index_admin_admission_fees_statuses_tuition_fees"
   end
 
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20161213154311) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.index ["admission_process_id"], name: "index_admin_admission_process_images_on_admission_process_id"
+    t.index ["admission_process_id"], name: "admission_process_image"
   end
 
   create_table "admin_admission_processes", force: :cascade do |t|
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20161213154311) do
     t.integer  "icon_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.text     "details"
     t.index ["icon_id"], name: "index_admin_events_on_icon_id"
   end
 
