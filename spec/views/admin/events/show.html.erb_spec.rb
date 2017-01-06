@@ -4,6 +4,7 @@ RSpec.describe "admin/events/show", type: :view do
   before(:each) do
     @admin_event = assign(:admin_event, Admin::Event.create!(
       :name => "Name",
+      :details => "MyText",
       :starting_time => "Starting Time",
       :ending_time => "Ending Time",
       place:"Mystring",
@@ -15,6 +16,7 @@ RSpec.describe "admin/events/show", type: :view do
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/Name/)
+    expect(rendered).to match(/MyText/)
     expect(rendered).to match(/Starting Time/)
     expect(rendered).to match(/Ending Time/)
     expect(rendered).to match(//)

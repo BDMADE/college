@@ -5,6 +5,7 @@ RSpec.describe "admin/events/index", type: :view do
     assign(:admin_events, [
       Admin::Event.create!(
         :name => "Name",
+        :details => "Text",
         :starting_time => "Starting Time",
         :ending_time => "Ending Time",
         place:"Mystring",
@@ -17,6 +18,7 @@ RSpec.describe "admin/events/index", type: :view do
   it "renders a list of admin/events" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 1
+    assert_select "tr>td", :text => "Text".to_s, :count => 1
     assert_select "tr>td", :text => "Starting Time".to_s, :count => 1
     assert_select "tr>td", :text => "Ending Time".to_s, :count => 1
     assert_select "tr>td", :text => "az".to_s, :count => 1
