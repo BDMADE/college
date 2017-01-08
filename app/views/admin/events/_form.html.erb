@@ -1,46 +1,51 @@
 <%= form_for(admin_event) do |f| %>
-  <% if admin_event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(admin_event.errors.count, "error") %> prohibited this admin_event from being saved:</h2>
+    <% if admin_event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(admin_event.errors.count, "error") %> prohibited this admin_event from being saved:</h2>
 
-      <ul>
-      <% admin_event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% admin_event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+    <div class="field">
+      <%= f.label :details %>
+      <%= f.text_area :details %>
+    </div>
 
-  <div class="field">
-    <%= f.label :event_date %>
-    <%= f.date_select :event_date %>
-  </div>
+    <div class="field">
+      <%= f.label :event_date %>
+      <%= f.date_select :event_date %>
+    </div>
 
-  <div class="field">
-    <%= f.label :starting_time %>
-    <%= f.text_field :starting_time %>
-  </div>
+    <div class="field">
+      <%= f.label :starting_time %>
+      <%= f.text_field :starting_time %>
+    </div>
 
-  <div class="field">
-    <%= f.label :ending_time %>
-    <%= f.text_field :ending_time %>
-  </div>
+    <div class="field">
+      <%= f.label :ending_time %>
+      <%= f.text_field :ending_time %>
+    </div>
     <div class="field">
       <%= f.label :place %>
       <%= f.text_field :place %>
     </div>
 
-  <div class="field">
-    <%= f.label :icon_id %>
-    <%= f.collection_select :icon_id, Admin::Icon.all, :id,:name,{ prompt:true }%>
-  </div>
+    <div class="field">
+      <%= f.label :icon_id %>
+      <%= f.collection_select :icon_id, Admin::Icon.all, :id,:name,{ prompt:true }%>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

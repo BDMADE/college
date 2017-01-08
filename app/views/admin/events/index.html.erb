@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Details</th>
       <th>Event date</th>
       <th>Starting time</th>
       <th>Ending time</th>
@@ -18,6 +19,7 @@
     <% @admin_events.each do |admin_event| %>
       <tr>
         <td><%= admin_event.name %></td>
+        <td><%= admin_event.details.html_safe %></td>
         <td><%= admin_event.event_date %></td>
         <td><%= admin_event.starting_time %></td>
         <td><%= admin_event.ending_time %></td>
