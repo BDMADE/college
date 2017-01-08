@@ -1,0 +1,19 @@
+<%website_name = if Admin::Website.last.nil?
+'Website'
+else
+Admin::Website.last.name
+end
+%>
+<% scholarship = Admin::Scholarship.first %>
+
+<div class="widget has-divider">
+  <h3 class="title">Apply Online</h3>
+  <p>Apply online in <%= website_name %> and proud to be an Engineer.</p>
+  <p class="promo-badge">
+    <a class="FireBush" href="#">
+      <span class="percentage"><%= scholarship.discount %>% <span class="off">OFF</span></span>
+      <br>
+      <span class="desc"><%= scholarship.condition %></span>
+    </a>
+  </p>
+</div>

@@ -1,0 +1,23 @@
+<% telephone_id = Admin::PostalType.find_by(name: 'telephone').id %>
+<% telephones = Admin::Postal.where(type_id: telephone_id) %>
+<% mobile_id = Admin::PostalType.find_by(name: 'mobile').id %>
+<% mobiles = Admin::Postal.where(type_id: mobile_id) %>
+<% email_id = Admin::PostalType.find_by(name: 'email').id %>
+<% emails = Admin::Postal.where(type_id: email_id) %>
+
+<div class="widget has-divider">
+  <h3 class="title">Contact Info</h3>
+
+  <% telephones.each do |telephone| %>
+      <p class="tel"><i class="<%= telephone.type.icon.icon %>"></i>Telephone:&nbsp;&nbsp;<%= telephone.details %></p>
+  <% end %>
+
+  <% mobiles.each do |mobile| %>
+      <p class="tel"><i class="<%= mobile.type.icon.icon %>"></i>Mobile:&nbsp;&nbsp;<%= mobile.details %></p>
+  <% end %>
+
+  <% emails.each do |email| %>
+      <p class="email"><i class="<%= email.type.icon.icon %>"></i>Email:&nbsp;&nbsp;<%= email.details %></p>
+  <% end %>
+
+</div>
