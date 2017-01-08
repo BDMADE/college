@@ -22,6 +22,8 @@ class FrontendController < ApplicationController
   end
 
   def scholarships
+    @title = 'Scholarship'
+    @scholarship_groups = Admin::ScholarshipGroup.all
   end
 
   def how_to_apply
