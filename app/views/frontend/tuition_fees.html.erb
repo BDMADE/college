@@ -1,2 +1,37 @@
-<h1>Frontend#tuition_fees</h1>
-<p>Find me in app/views/frontend/tuition_fees.html.erb</p>
+
+<article class="welcome col-md-8 col-sm-7">
+
+  <% @tuition_fees_group.each do |group| %>
+      <header class="page-heading clearfix">
+        <h2 class="heading-title pull-left"><%= group.name %></h2>
+      </header>
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Fees Name</th>
+            <th>Payable</th>
+            <th>Status</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% group.tuition_fees.each do |tuition| %>
+              <tr>
+                <td><%= tuition.name %></td>
+                <td><%= tuition.payable %> Taka</td>
+                <td>
+                  <% tuition.admin_admission_fees_statuses.each do |status| %>
+                      <span class="label label-<%= tuition_fees_badge(tuition) %>"><%= status.name %></span>
+                  <% end %>
+                </td>
+                <td><%= total_tuition_fees(tuition) %> Taka</td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+  <% end %>
+  <small>* Board fees depends upon Bangladesh Technical Education Board.</small>
+</article>

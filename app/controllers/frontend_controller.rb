@@ -19,6 +19,8 @@ class FrontendController < ApplicationController
   end
 
   def tuition_fees
+    @title = 'Tuition Fees'
+    @tuition_fees_group = Admin::TuitionFeesGroup.all
   end
 
   def scholarships
