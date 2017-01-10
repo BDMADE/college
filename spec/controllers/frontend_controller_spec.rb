@@ -45,6 +45,7 @@ RSpec.describe FrontendController, type: :controller do
   end
 
   describe "GET #how_to_apply" do
+    let!(:website) { FactoryGirl.create :admin_website, name: 'BUET' }
     it "returns http success" do
       get :how_to_apply
       expect(response).to have_http_status(:success)

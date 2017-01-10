@@ -1,2 +1,24 @@
-<h1>Frontend#how_to_apply</h1>
-<p>Find me in app/views/frontend/how_to_apply.html.erb</p>
+
+<article class="welcome col-md-12 col-sm-12">
+  <% @admission_process.each do |admission_process| %>
+      <header class="page-heading clearfix">
+        <h2 class="heading-title pull-left">Step <%= admission_process.step %>:<%= admission_process.name %></h2>
+      </header>
+      <% admission_process.admin_admission_process_images.each do |process_image| %>
+          <div class="col-md-12 col-sm-12">
+            <div class="col-md-6 col-sm-6">
+              <p><%= image_tag process_image.image.url(:large), class: 'img-responsive' %></p>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <% process_image.admin_admission_process_image_details.each do |image_details| %>
+                  <div class="box box-border">
+                    <%= image_details.details.html_safe %>
+                  </div>
+                  <br>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
+</article>

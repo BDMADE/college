@@ -29,6 +29,10 @@ class FrontendController < ApplicationController
   end
 
   def how_to_apply
+    website_name =Admin::Website.last.name
+    @title = 'How to Apply in ' + website_name.to_s
+    @admission_process = Admin::AdmissionProcess.all
+
   end
 
   def courses
