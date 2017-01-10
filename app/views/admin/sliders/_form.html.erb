@@ -1,0 +1,35 @@
+<%= form_for(admin_slider) do |f| %>
+  <% if admin_slider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_slider.errors.count, "error") %> prohibited this admin_slider from being saved:</h2>
+
+      <ul>
+      <% admin_slider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <div class="field">
+      <%= f.label :image%>
+      <%= f.file_field :image %>
+    </div>
+  <div class="field">
+    <%= f.label :caption_1 %>
+    <%= f.text_field :caption_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :caption_2 %>
+    <%= f.text_field :caption_2 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
