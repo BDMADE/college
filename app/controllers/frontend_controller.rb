@@ -42,6 +42,8 @@ class FrontendController < ApplicationController
   end
 
   def event
+    @title = 'Events'
+    @events = Admin::Event.order(updated_at: :desc).limit(10)
   end
 
   def contact
