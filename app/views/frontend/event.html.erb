@@ -1,2 +1,22 @@
-<h1>Frontend#event</h1>
-<p>Find me in app/views/frontend/event.html.erb</p>
+<div class="events-wrapper col-md-8 col-sm-7">
+  <% @events.each do |event| %>
+      <article class="events-item page-row has-divider clearfix">
+        <div class="date-label-wrapper col-md-1 col-sm-2">
+          <p class="date-label"><span class="month"><%= event.event_date.strftime('%b') %></span><span class="date-number"><%= event.event_date.strftime('%d') %></span></p>
+        </div>
+
+        <div class="details col-md-11 col-sm-10">
+          <h3 class="title"><%= event.name %></h3>
+          <p class="meta"><span class="time">
+<i class="fa fa-clock-o"></i><%= event.starting_time %> - <%= event.ending_time %></span>
+            <span class="location"><i class="<%= event.icon.icon %>"></i><a href="#"><%= event.place %></a></span>
+          </p>
+          <p class="desc"><%= event.details %></p>
+        </div>
+      </article>
+  <% end %>
+</div>
+
+<aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+  <%= render partial: 'shared/apply_online' %>
+</aside>
