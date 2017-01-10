@@ -68,7 +68,7 @@ RSpec.describe FrontendHelper, type: :helper do
       expect(tuition_fees_badge(tuition_fees_1)).to eq('success')
     end
 
-    it 'returns warning badge for odd number id' do
+    it 'returns warning badge for even number id' do
       expect(tuition_fees_badge(tuition_fees_2)).to eq('warning')
     end
   end
