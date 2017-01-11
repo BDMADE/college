@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'frontend/event'
 
   get 'frontend/contact'
+  get 'frontend/courses/:id', to: 'frontend#courses'
 
   namespace :admin do
     resources :mini_sliders

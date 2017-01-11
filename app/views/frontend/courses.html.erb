@@ -1,2 +1,7 @@
-<h1>Frontend#courses</h1>
-<p>Find me in app/views/frontend/courses.html.erb</p>
+<style>.fix800{width:800px;height:220px;}</style>
+
+<article class="welcome col-md-9 col-sm-8">
+  <h3 class="title">Welcome to <%= @course.name %></h3>
+  <p><%= image_tag @course.image.url(:large), class: 'fix800 img-responsive' %></p>
+  <p><%= @course.description.html_safe %></p>
+</article>

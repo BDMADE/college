@@ -53,6 +53,7 @@ RSpec.describe FrontendController, type: :controller do
   end
 
   describe "GET #courses" do
+    let!(:course) { FactoryGirl.create :admin_course, name: 'Math', id: 1}
     it "returns http success" do
       get :courses
       expect(response).to have_http_status(:success)

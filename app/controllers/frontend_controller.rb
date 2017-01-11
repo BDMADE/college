@@ -36,6 +36,8 @@ class FrontendController < ApplicationController
   end
 
   def courses
+    @course = Admin::Course.find(params[:id])
+    @title = @course.name
   end
 
   def news
