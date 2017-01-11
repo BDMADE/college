@@ -1,0 +1,19 @@
+<% events = Admin::Event.order(updated_at: :desc).limit(5) %>
+<section class="events">
+  <h1 class="section-heading text-highlight"><span class="line">Events</span></h1>
+  <div class="section-content">
+    <% events.each do |event| %>
+        <div class="event-item">
+          <p class="date-label">
+            <span class="month"><%= event.event_date.strftime('%b') %></span>
+            <span class="date-number"><%= event.event_date.strftime('%d') %></span>
+          </p>
+          <div class="details">
+            <h2 class="title"><%= event.name %></h2>
+            <p class="time"><i class="fa fa-clock-o"></i><%= event.starting_time %> - <%= event.ending_time %></p>
+            <p class="location"><i class="<%= event.icon.icon %>"></i><%= event.place %></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</section>

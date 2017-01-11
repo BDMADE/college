@@ -1,2 +1,21 @@
-<h1>Frontend#news</h1>
-<p>Find me in app/views/frontend/news.html.erb</p>
+<div class="news-wrapper col-md-8 col-sm-7">
+  <% @newses.each do |news| %>
+      <article class="news-item page-row has-divider clearfix row">
+        <figure class="thumb col-md-2 col-sm-3 col-xs-4">
+          <%= image_tag news.image.url(:thumb), class: 'img-responsive' %>
+        </figure>
+        <div class="details col-md-10 col-sm-9 col-xs-8">
+          <h3 class="title"><a  href="news/<%= news.id %>"><%= news.name %></a></h3>
+          <p><%= truncate news.description.html_safe, length: 210 %></p>
+          <a class="btn btn-theme read-more" href="news/<%= news.id %>">Read more<i class="fa fa-chevron-right"></i></a>
+        </div>
+      </article>
+      <%= link_to 'details' ,frontend_news_details_path(news) %>
+  <% end %>
+</div>
+
+<aside class="page-sidebar col-md-4 col-sm-5">
+  <%= render partial: 'shared/event' %>
+  <%= render partial: 'shared/testimonial' %>
+
+</aside>
