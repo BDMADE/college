@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :sliders
+  end
   get 'frontend/home'
 
   get 'frontend/noticeboard'

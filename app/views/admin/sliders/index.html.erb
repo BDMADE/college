@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Sliders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Caption 1</th>
+      <th>Caption 2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_sliders.each do |admin_slider| %>
+      <tr>
+        <td><%= admin_slider.name %></td>
+        <td><%= admin_slider.caption_1 %></td>
+        <td><%= admin_slider.caption_2 %></td>
+        <td><%=image_tag admin_slider.image.url(:thumb) %></td>
+        <td><%= link_to 'Show', admin_slider %></td>
+        <td><%= link_to 'Edit', edit_admin_slider_path(admin_slider) %></td>
+        <td><%= link_to 'Destroy', admin_slider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Slider', new_admin_slider_path %>
