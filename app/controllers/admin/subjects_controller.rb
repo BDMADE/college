@@ -55,6 +55,6 @@ class Admin::SubjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_subject_params
-      params.require(:admin_subject).permit(:name, :course_id, :semester_id)
+      params.require(:admin_subject).permit(:course_id, :semester_id, admin_subject_forms_attributes:[:id,:name,:_destroy])
     end
 end

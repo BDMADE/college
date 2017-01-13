@@ -4,5 +4,6 @@ class Admin::Course < ApplicationRecord
   validates_presence_of :name
   validates_uniqueness_of :name
   validates_presence_of :description
-  has_many :admin_subjects, :class_name => 'Admin::Subject',:inverse_of=>"admin_subjects"
+  has_many :subjects, :class_name => 'Admin::Subject', inverse_of: :course, foreign_key: :course_id
+  has_many :semesters, :class_name => 'Admin::Semester', through: :subjects
 end
