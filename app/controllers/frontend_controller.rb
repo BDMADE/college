@@ -36,11 +36,19 @@ class FrontendController < ApplicationController
   end
 
   def courses
+    @course = Admin::Course.find(params[:id])
+    @title = @course.name
   end
 
   def news
+    @title = 'News'
+    @newses = Admin::News.order(updated_at: :desc).limit(7)
   end
-
+  def news_details
+    @news = Admin::News.find(params[:id])
+   # @news = Admin::News.last
+    @title = @news.name
+  end
   def event
     @title = 'Events'
     @events = Admin::Event.order(updated_at: :desc).limit(10)
