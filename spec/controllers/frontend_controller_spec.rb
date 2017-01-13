@@ -75,7 +75,6 @@ RSpec.describe FrontendController, type: :controller do
     end
   end
 
-
   describe "GET #event" do
     it "returns http success" do
       get :event
