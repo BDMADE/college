@@ -1,6 +1,8 @@
 class Admin::AdmissionEligibilitiesController < ApplicationController
   before_action :set_admin_admission_eligibility, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/admission_eligibilities
   def index
     @admin_admission_eligibilities = Admin::AdmissionEligibility.all

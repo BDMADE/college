@@ -1,6 +1,8 @@
 class Admin::AboutsController < ApplicationController
   before_action :set_admin_about, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/abouts
   def index
     @admin_abouts = Admin::About.all

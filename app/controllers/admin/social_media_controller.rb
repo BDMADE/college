@@ -1,6 +1,8 @@
 class Admin::SocialMediaController < ApplicationController
   before_action :set_admin_social_medium, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/social_media
   def index
     @admin_social_media = Admin::SocialMedium.all

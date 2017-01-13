@@ -1,6 +1,8 @@
 class Admin::GoogleMapsController < ApplicationController
   before_action :set_admin_google_map, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/google_maps
   def index
     @admin_google_maps = Admin::GoogleMap.all

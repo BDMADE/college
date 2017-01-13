@@ -1,6 +1,8 @@
 class Admin::WebsitesController < ApplicationController
   before_action :set_admin_website, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/websites
   def index
     @admin_websites = Admin::Website.all

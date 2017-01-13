@@ -1,6 +1,8 @@
 class Admin::TuitionFeesGroupsController < ApplicationController
   before_action :set_admin_tuition_fees_group, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/tuition_fees_groups
   def index
     @admin_tuition_fees_groups = Admin::TuitionFeesGroup.all

@@ -1,18 +1,68 @@
 <% content_for :nav do %>
-    <!--For a single menu content-->
     <li class="has-submenu active">
-      <a href="#"><i class="zmdi zmdi-view-dashboard"></i>Dashboard</a>
+      <a href="/"><i class="zmdi zmdi-view-dashboard"></i>Dashboard</a>
+
     </li>
 
-    <!--For a normal menu content-->
     <li class="has-submenu">
-      <a href="#"><i class="zmdi zmdi-palette"></i>UI Kit</a>
-      <ul class="submenu">
-        <li><a href="#">Portlets</a></li>
-        <li><a href="#">Checkboxs-Radios</a></li>
-        <li><a href="#">Tabs</a></li>
-        <li><a href="#">Modals</a></li>
+      <a href="#"><i class="zmdi zmdi-layers"></i>Pages</a>
+      <ul class="submenu megamenu">
+        <li>
+          <ul>
+            <li>
+              <span>Admission</span>
+            </li>
+            <li><%= link_to 'Admission Eligibility', admin_admission_eligibilities_url  %></li>
+            <li><%= link_to 'Admission Process', admin_admission_processes_url %></li>
+            <li><%= link_to 'Admission Fees Status', admin_admission_fees_statuses_url %></li>
+            <li><%= link_to 'Tuition Fees Group', admin_tuition_fees_groups_url %></li>
+            <li><%= link_to 'Tuition Fees', admin_tuition_fees_url %></li>
+            <li><%= link_to 'Scholarship Group', admin_scholarship_groups_url %></li>
+            <li><%= link_to 'Scholarship', admin_scholarships_url %></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <span>General</span>
+            </li>
+            <li><%= link_to 'Notice Boards', admin_notice_boards_url %></li>
+            <li><%= link_to 'Abouts', admin_abouts_url %></li>
+            <li><%= link_to 'Courses', admin_courses_url %></li>
+            <li><%= link_to 'Department', admin_departments_url %></li>
+            <li><%= link_to 'Semester', admin_semesters_url %></li>
+            <li><%= link_to 'Subjects', admin_subjects_url %></li>
+          </ul>
+        </li>
+
+        <li>
+          <ul>
+            <li>
+              <span>Media</span>
+            </li>
+            <li><%= link_to 'Events', admin_events_url %></li>
+            <li><%= link_to 'News', admin_news_index_url %></li>
+            <li><%= link_to 'Postal Types', admin_postal_types_url %></li>
+            <li><%= link_to 'Postal', admin_postals_url %></li>
+            <li><%= link_to 'Social Media', admin_social_media_url %></li>
+            <li><%= link_to 'Testimonials', admin_testimonials_url %></li>
+            <li><%= link_to 'Quick Links', admin_quick_links_url %></li>
+          </ul>
+        </li>
       </ul>
     </li>
+
+    <li class="has-submenu">
+      <a href="#"><i class="zmdi zmdi-account-circle"></i>Others</a>
+      <ul class="submenu">
+        <li><%= link_to 'Google Map', admin_google_maps_url %></li>
+        <li><%= link_to 'Icons', admin_icons_url %></li>
+        <li><%= link_to 'Sliders', admin_sliders_url %></li>
+        <li><%= link_to 'Mini Sliders', admin_mini_sliders_url %></li>
+        <li><%= link_to 'Videos', admin_videos_url %></li>
+        <li><%= link_to 'Websites', admin_websites_url %></li>
+      </ul>
+    </li>
+
 <% end %>
 

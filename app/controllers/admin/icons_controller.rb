@@ -1,6 +1,8 @@
 class Admin::IconsController < ApplicationController
   before_action :set_admin_icon, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/icons
   def index
     @admin_icons = Admin::Icon.all

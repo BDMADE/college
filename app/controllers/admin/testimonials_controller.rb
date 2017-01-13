@@ -1,6 +1,8 @@
 class Admin::TestimonialsController < ApplicationController
   before_action :set_admin_testimonial, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/testimonials
   def index
     @admin_testimonials = Admin::Testimonial.all

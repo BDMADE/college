@@ -1,6 +1,8 @@
 class Admin::QuickLinksController < ApplicationController
   before_action :set_admin_quick_link, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/quick_links
   def index
     @admin_quick_links = Admin::QuickLink.all

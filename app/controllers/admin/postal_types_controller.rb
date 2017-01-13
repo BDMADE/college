@@ -1,6 +1,8 @@
 class Admin::PostalTypesController < ApplicationController
   before_action :set_admin_postal_type, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/postal_types
   def index
     @admin_postal_types = Admin::PostalType.all
