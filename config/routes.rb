@@ -17,11 +17,12 @@ Rails.application.routes.draw do
 
   get 'frontend/news'
 
+  get 'frontend/news/:id', to: 'frontend#news_details'
+  
   get 'frontend/event'
 
   get 'frontend/contact'
-  get 'frontend/news_details' ,:to=> 'frontend#news_details'
-
+  
   namespace :admin do
     resources :mini_sliders
   end
