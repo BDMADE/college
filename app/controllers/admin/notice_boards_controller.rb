@@ -1,6 +1,8 @@
 class Admin::NoticeBoardsController < ApplicationController
   before_action :set_admin_notice_board, only: [:show, :edit, :update, :destroy]
+
   layout 'college_admin'
+
   # GET /admin/notice_boards
   def index
     @admin_notice_boards = Admin::NoticeBoard.all

@@ -1,6 +1,8 @@
 class Admin::DepartmentsController < ApplicationController
   before_action :set_admin_department, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/departments
   def index
     @admin_departments = Admin::Department.all

@@ -1,6 +1,8 @@
 class Admin::MiniSlidersController < ApplicationController
   before_action :set_admin_mini_slider, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/mini_sliders
   def index
     @admin_mini_sliders = Admin::MiniSlider.all

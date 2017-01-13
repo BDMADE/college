@@ -1,6 +1,8 @@
 class Admin::SubjectsController < ApplicationController
   before_action :set_admin_subject, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/subjects
   def index
     @admin_subjects = Admin::Subject.all

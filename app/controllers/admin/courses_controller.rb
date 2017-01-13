@@ -1,6 +1,8 @@
 class Admin::CoursesController < ApplicationController
   before_action :set_admin_course, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/courses
   def index
     @admin_courses = Admin::Course.all

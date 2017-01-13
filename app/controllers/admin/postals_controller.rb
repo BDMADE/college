@@ -1,6 +1,8 @@
 class Admin::PostalsController < ApplicationController
   before_action :set_admin_postal, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/postals
   def index
     @admin_postals = Admin::Postal.all

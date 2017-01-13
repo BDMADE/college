@@ -1,6 +1,8 @@
 class Admin::AdmissionFeesStatusesController < ApplicationController
   before_action :set_admin_admission_fees_status, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/admission_fees_statuses
   def index
     @admin_admission_fees_statuses = Admin::AdmissionFeesStatus.all

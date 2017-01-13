@@ -1,6 +1,8 @@
 class Admin::EventsController < ApplicationController
   before_action :set_admin_event, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/events
   def index
     @admin_events = Admin::Event.all

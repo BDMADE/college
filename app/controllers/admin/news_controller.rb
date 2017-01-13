@@ -1,6 +1,8 @@
 class Admin::NewsController < ApplicationController
   before_action :set_admin_news, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/news
   def index
     @admin_news = Admin::News.all

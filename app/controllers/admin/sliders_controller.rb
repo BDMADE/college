@@ -1,6 +1,8 @@
 class Admin::SlidersController < ApplicationController
   before_action :set_admin_slider, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/sliders
   def index
     @admin_sliders = Admin::Slider.all

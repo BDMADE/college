@@ -1,6 +1,8 @@
 class Admin::VideosController < ApplicationController
   before_action :set_admin_video, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/videos
   def index
     @admin_videos = Admin::Video.all

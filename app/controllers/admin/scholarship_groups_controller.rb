@@ -1,6 +1,8 @@
 class Admin::ScholarshipGroupsController < ApplicationController
   before_action :set_admin_scholarship_group, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/scholarship_groups
   def index
     @admin_scholarship_groups = Admin::ScholarshipGroup.all

@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170110134402) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.index ["admission_process_id"], name: "index_admin_admission_process_images_on_admission_process_id"
+    t.index ["admission_process_id"], name: "admission_process_image"
   end
 
   create_table "admin_admission_processes", force: :cascade do |t|

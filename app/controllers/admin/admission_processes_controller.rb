@@ -1,6 +1,8 @@
 class Admin::AdmissionProcessesController < ApplicationController
   before_action :set_admin_admission_process, only: [:show, :edit, :update, :destroy]
 
+  layout 'college_admin'
+
   # GET /admin/admission_processes
   def index
     @admin_admission_processes = Admin::AdmissionProcess.all
