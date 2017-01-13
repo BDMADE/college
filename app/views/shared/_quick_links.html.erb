@@ -1,0 +1,8 @@
+<section class="links">
+  <h1 class="section-heading text-highlight"><span class="line">Quick Links</span></h1>
+  <div class="section-content">
+<% Admin::QuickLink.order(updated_at: :desc).limit(4).each do |quick_link| %>
+    <p><a href="<%= quick_link.link %>" target="_blank"><i class="fa fa-caret-right"></i><%= quick_link.name %></a></p>
+<% end %>
+  </div><!--//section-content-->
+</section>

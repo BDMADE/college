@@ -76,89 +76,13 @@
 
   <div class="col-md-6">
     <%= render partial: 'shared/course_finder' %>
-    <section class="video">
-      <h1 class="section-heading text-highlight"><span class="line">Video Tour</span></h1>
-      <div class="carousel-controls">
-        <a class="prev" href="#videos-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
-        <a class="next" href="#videos-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
-      </div><!--//carousel-controls-->
-      <div class="section-content">
-        <div id="videos-carousel" class="videos-carousel carousel slide">
-          <div class="carousel-inner">
-            <div class="item active">
-              <iframe class="video-iframe" src="https://www.youtube.com/embed/zMqsU1aqenk" frameborder="0" allowfullscreen=""></iframe>
-              <p class="description">Watch Hydro electric based power plant that is discovered by DEI students.</p>
-            </div><!--//item-->
-
-            <div class="item">
-              <iframe class="video-iframe" src="https://www.youtube.com/embed/0K-g84sK6R0" frameborder="0" allowfullscreen=""></iframe>
-              <p class="description">Watch our web development process and learn how to develop an website successfully.</p>
-            </div><!--//item-->
-
-            <div class="item">
-              <iframe class="video-iframe" src="https://www.youtube.com/embed/BvrRRFFSsEM?rel=0&amp;wmode=transparent" frameborder="0" allowfullscreen=""></iframe>
-
-              <p class="description">Watch our civil architecture and learn how to build a building strongly.</p>
-            </div><!--//item-->
-          </div><!--//carousel-inner-->
-        </div><!--//videos-carousel-->
-
-      </div><!--//section-content-->
-    </section>
-
+    <%= render partial: 'shared/video' %>
 
   </div>
 
   <div class="col-md-3">
-    <section class="links">
-      <h1 class="section-heading text-highlight"><span class="line">Quick Links</span></h1>
-      <div class="section-content">
-
-        <p><a href="http://goo.gl/DtW6tO" target="_blank"><i class="fa fa-caret-right"></i>BTEB Notice Board</a></p>
-        <p><a href="https://goo.gl/D4GvLz" target="_blank" ><i class="fa fa-caret-right"></i>DEI FB Group Page</a></p>
-        <p><a href="http://goo.gl/sk0YWT" target="_blank"><i class="fa fa-caret-right"></i>Job Vacancies</a></p>
-        <p><a href="https://goo.gl/ZN1o4y" target="_blank"><i class="fa fa-caret-right"></i>DEI24</a></p>
-
-      </div><!--//section-content-->
-    </section><!--//links-->
-
-    <section class="testimonials">
-      <h1 class="section-heading text-highlight"><span class="line">Student Testimonials</span></h1>
-      <!--<div class="carousel-controls">
-<a class="prev" href="#testimonials-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
-<a class="next" href="#testimonials-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
-</div><!--//carousel-controls-->
-      <div class="section-content">
-        <div id="testimonials-carousel" class="testimonials-carousel carousel slide">
-          <div class="carousel-inner">
-            <div class="item active">
-              <blockquote class="quote">
-                <p><i class="fa fa-quote-left"></i>Dhaka Engineering Institute is one of the leading Diploma in engineering institute in Bangladesh.We believe that, learning the right way is when you do want you like .Join us & build a brighter future of yours.</p>
-              </blockquote>
-              <div class="row">
-                <p class="people col-md-8 col-sm-3 col-xs-8"><span class="name">Fåhîm Hásàñ Âßîr</span><br />
-                  <span class="title">Student(CMT-4th)</span></p>
-                <img class="img-responsive img-circle profile col-md-4 pull-right" src="data:image/jpg;base64,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" alt="
-Fåhîm Hásàñ Âßîr" />
-              </div>
-            </div><!--//item-->                                     <div class="item">
-            <blockquote class="quote">
-              <p><i class="fa fa-quote-left"></i>The quality of education in our institution is good.Good care is taken to student.Poor students get extra privileges from our college.Many students are reading in here with scholarship.</p>
-            </blockquote>
-            <div class="row">
-              <p class="people col-md-8 col-sm-3 col-xs-8"><span class="name">Rakibul Islam</span><br />
-                <span class="title">Student(ET-8th)</span></p>
-              <img class="img-responsive img-circle profile col-md-4 pull-right" src="data:image/jpg;base64,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" alt="Rakibul Islam" />
-            </div>
-          </div><!--//item-->
-
-
-          </div><!--//carousel-inner-->
-        </div><!--//testimonials-carousel-->
-      </div><!--//section-content-->
-
-    </section><!--//testimonials-->
-
+    <%= render partial: 'shared/quick_links' %>
+    <%= render partial: 'shared/testimonial' %>
   </div>
 
 </div><!--//cols-wrapper-->
