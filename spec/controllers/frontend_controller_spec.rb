@@ -53,9 +53,9 @@ RSpec.describe FrontendController, type: :controller do
   end
 
   describe "GET #courses" do
-    let!(:course) { FactoryGirl.create :admin_course, name: 'Math', id: 1}
+    let(:course) { FactoryGirl.create :admin_course, name: 'Math', id: 1}
     it "returns http success" do
-      get :courses
+      get :courses, params: { id: course.to_param }
       expect(response).to have_http_status(:success)
     end
   end
@@ -66,6 +66,15 @@ RSpec.describe FrontendController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "GET #news_details" do
+    let(:news) { FactoryGirl.create :admin_news }
+    it "returns http success" do
+      get :news, params: { id: news.to_param }
+      expect(response).to have_http_status(:success)
+    end
+  end
+
 
   describe "GET #event" do
     it "returns http success" do

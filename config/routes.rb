@@ -13,14 +13,13 @@ Rails.application.routes.draw do
 
   get 'frontend/how_to_apply'
 
-  get 'frontend/courses'
+  get 'frontend/courses/:id', to: 'frontend#courses'
 
   get 'frontend/news'
 
   get 'frontend/event'
 
   get 'frontend/contact'
-  get 'frontend/courses/:id', to: 'frontend#courses'
 
   namespace :admin do
     resources :mini_sliders
