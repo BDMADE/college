@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'frontend/how_to_apply'
 
-  get 'frontend/courses'
+  get 'frontend/courses/:id', to: 'frontend#courses'
 
   get 'frontend/news'
 
