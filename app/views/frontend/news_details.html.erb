@@ -1,7 +1,8 @@
-<style>.fix750{width:750px;height:300px;}</style>
 <div class="news-wrapper col-md-8 col-sm-7">
   <article class="news-item">
-    <p class="featured-image"><%= image_tag @news.image.url(:large), class: 'fix750 img-responsive' %></p>
-    <p><%= @news.description.html_safe %></p>
+    <%= @news.description.html_safe %>
   </article>
+</div>
+<div class="news-wrapper col-md-4 col-sm-5">
+  <p class="featured-image"><%= image_tag @news.image.url(:large), class: 'img-responsive' %></p>
 </div>

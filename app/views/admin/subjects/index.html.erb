@@ -15,7 +15,7 @@
   <tbody>
     <% @admin_subjects.each do |admin_subject| %>
       <tr>
-        <td><%= admin_subject.name %></td>
+        <td><%= admin_subject.admin_subject_forms.map{ |subject| subject.name } %></td>
         <td><%= admin_subject.course.name %></td>
         <td><%= admin_subject.semester.name %></td>
         <td><%= link_to 'Show', admin_subject %></td>

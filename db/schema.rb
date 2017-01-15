@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110134402) do
+ActiveRecord::Schema.define(version: 20170113165601) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20170110134402) do
   end
 
   create_table "admin_admission_fees_statuses_admin_tuition_fees", id: false, force: :cascade do |t|
-    t.integer "admission_fees_status_id"
-    t.integer "tuition_fee_id"
+    t.integer "admission_fees_status_id", null: false
+    t.integer "tuition_fee_id",           null: false
     t.index ["admission_fees_status_id", "tuition_fee_id"], name: "index_admin_admission_fees_statuses_tuition_fees"
   end
 
@@ -226,8 +226,15 @@ ActiveRecord::Schema.define(version: 20170110134402) do
     t.index ["icon_id"], name: "index_admin_social_media_on_icon_id"
   end
 
-  create_table "admin_subjects", force: :cascade do |t|
+  create_table "admin_subject_forms", force: :cascade do |t|
     t.string   "name"
+    t.integer  "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_admin_subject_forms_on_subject_id"
+  end
+
+  create_table "admin_subjects", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "semester_id"
     t.datetime "created_at",  null: false

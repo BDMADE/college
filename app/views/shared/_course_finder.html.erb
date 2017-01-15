@@ -1,0 +1,45 @@
+<section class="course-finder">
+  <h1 class="section-heading text-highlight"><span class="line">Course Finder</span></h1>
+  <div ng-app class="section-content" >
+
+    <div class="row" ng-controller="StaticCtrl">
+      <div class="col-md-3 col-sm-3 subject">
+        <select id="course" ng-model="semesters" ng-options="course for (course, semesters) in courses">
+          <option value=''>Select Course</option>
+        </select>
+      </div>
+      <div class="col-md-2 col-sm-2 keywords">
+        <select id="semester" ng-disabled="!semesters" ng-model="subjects" ng-options="semester for (semester, subject) in semesters"><option value=''>Semester</option></select>
+      </div>
+      <div class="col-md-2 col-sm-2 subject">
+        <select id="subject" ng-disabled="!subjects" ng-model="subject" ng-options="subject for subject in subjects"><option value=''>View Subjects</option></select>
+      </div>
+
+
+    </div>
+
+
+  </div><!--//section-content-->
+</section>
+
+<!--Angular js with this course finders script-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+<script type="application/javascript">
+    function StaticCtrl($scope) {
+
+        $scope.courses = {
+            <% Admin::Course.all.each do |course| %>
+            '<%= course.name %>': {
+                <% course.semesters.each do |semester| %>
+                '<%= semester.short_form %>':[
+                    <% semester.subjects.first.admin_subject_forms.each do |x| %>
+                    '<%= x.name %>',
+                    <% end %>
+                ],
+                <% end %>
+            },
+            <% end %>
+        };
+    }
+</script>

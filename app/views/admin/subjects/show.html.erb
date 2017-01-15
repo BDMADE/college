@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @admin_subject.name %>
+  <%= @admin_subject.admin_subject_forms.map{|subject| subject.name } %>
 </p>
 
 <p>

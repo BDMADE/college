@@ -24,13 +24,11 @@ RSpec.describe Admin::SubjectsController, type: :controller do
   # Admin::Subject. As you add validations to Admin::Subject, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes)do{
-      name:"MyString",
       course: FactoryGirl.create(:admin_course),
       semester: FactoryGirl.create(:admin_semester)
   }end
 
   let(:invalid_attributes)do{
-      name:"",
       course: "",
       semester: ""
   }end
@@ -95,7 +93,6 @@ RSpec.describe Admin::SubjectsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) do{
-          name:"MyString1",
           course: FactoryGirl.create(:admin_course,:name=>"Name",:description=>"desc"),
           semester: FactoryGirl.create(:admin_semester,:name=>"az",:short_form=>"ist")
       }end
@@ -129,7 +126,7 @@ RSpec.describe Admin::SubjectsController, type: :controller do
       it "re-renders the 'edit' template" do
         subject = Admin::Subject.create! valid_attributes
         put :update, params: {id: subject.to_param, admin_subject: invalid_attributes}, session: valid_session
-        expect(response).to render_template("edit")
+        expect(response).to redirect_to(admin_subject_url(subject))
       end
     end
   end

@@ -1,6 +1,12 @@
 class FrontendController < ApplicationController
-  layout 'college/base'
+  layout 'college/base', except: :home
+
   def home
+    @title = 'Home'
+    @sliders = Admin::Slider.order(updated_at: :desc).limit(5)
+    @newses = Admin::News.order(updated_at: :desc).limit(3)
+    @website = Admin::Website.last
+    render layout: 'college/home'
   end
 
   def noticeboard

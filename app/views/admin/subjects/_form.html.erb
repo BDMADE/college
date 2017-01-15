@@ -11,10 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+    <div class="field">
+      <%= f.label :subject_form %>
+      <div id="admin_subject_forms">
+        <%= f.fields_for :admin_subject_forms do |subject_form| %>
+            <%= render 'admin/subjects/admin_subject_form_fields', f: subject_form %>
+        <% end %>
+        <%= link_to_add_association 'Add Subject',f,:admin_subject_forms,class: 'btn btn-primary' %>
+      </div>
+    </div>
 
   <div class="field">
     <%= f.label :course_id %>

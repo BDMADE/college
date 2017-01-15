@@ -1,0 +1,26 @@
+<section class="video">
+  <h1 class="section-heading text-highlight"><span class="line">Video Tour</span></h1>
+  <div class="carousel-controls">
+    <a class="prev" href="#videos-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+    <a class="next" href="#videos-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+  </div><!--//carousel-controls-->
+  <div class="section-content">
+    <div id="videos-carousel" class="videos-carousel carousel slide">
+      <div class="carousel-inner">
+
+        <div class="item active">
+          <iframe class="video-iframe" src="<%= Admin::Video.first.link %>" frameborder="0" allowfullscreen=""></iframe>
+          <p class="description"><%= Admin::Video.first.details.html_safe %></p>
+        </div><!--//item-->
+
+        <% Admin::Video.order(updated_at: :desc).each do |video| %>
+            <div class="item">
+              <iframe class="video-iframe" src="<%= video.link %>" frameborder="0" allowfullscreen=""></iframe>
+              <p class="description"><%= video.details.html_safe %></p>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</section>
