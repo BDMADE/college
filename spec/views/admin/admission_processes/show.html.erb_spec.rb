@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "admin/admission_processes/show", type: :view do
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email: 'a@s.com', password: 'secret', admin: true) }
+  before do
+    assign(:current_user, user)
+  end
+
   before(:each) do
     @admin_admission_process = assign(:admin_admission_process, Admin::AdmissionProcess.create!(
       :step => 2,

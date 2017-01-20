@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "admin/admission_eligibilities/index", type: :view do
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email: 'a@s.com', password: 'secret', admin: true) }
+  before do
+    assign(:current_user, user)
+  end
+
   before(:each) do
     assign(:admin_admission_eligibilities, [
       Admin::AdmissionEligibility.create!(
