@@ -61,5 +61,23 @@ class FrontendController < ApplicationController
   end
 
   def contact
+    @title = 'Contact'
+    @map = Admin::GoogleMap.last
+    @contact = Admin::Contact.new
+  end
+
+  def create_contact
+    @contact = Admin::Contact.new(contact_params)
+
+    if @contact.save
+      redirect_to contact_path, notice: 'Contact was successfully created.'
+    else
+      render :contact
+    end
+  end
+
+  private
+  def contact_params
+    params.require(:admin_contact).permit(:name, :email, :phone, :message)
   end
 end

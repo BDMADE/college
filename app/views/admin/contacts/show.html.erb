@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_contact.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin_contact.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @admin_contact.phone %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @admin_contact.message %>
+</p>
+
+<%= link_to 'Edit', edit_admin_contact_path(@admin_contact) %> |
+<%= link_to 'Back', admin_contacts_path %>
+<%= render 'shared/extends_admin_layout' %>

@@ -1,2 +1,84 @@
-<h1>Frontend#contact</h1>
-<p>Find me in app/views/frontend/contact.html.erb</p>
+<div class="row">
+<article class="contact-form col-md-8 col-sm-7">
+  <h3 class="title">Get in touch</h3>
+  <p>We’d love to hear from you.If you have any query,don't feel shy and ask us in your query.We will try our best to give reply in your message.</p>
+  <%= form_for @contact,url: url_for(controller:'frontend', action: 'create_contact')do |f| %>
+
+      <% if @contact.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this @contact from being saved:</h2>
+
+            <ul>
+              <% @contact.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="form-group name">
+        <%= f.label :name %>
+        <%= f.text_field :name, class:'form-control', placeholder: 'Enter your name', required: 'required' %>
+      </div>
+
+      <div class="form-group email">
+        <%= f.label :email %>
+        <%= f.text_field :email, class:'form-control', placeholder: 'Enter your name', required: 'required'  %>
+      </div>
+
+      <div class="form-group phone ">
+        <%= f.label :phone %>
+        <%= f.number_field :phone, class:'form-control', placeholder: 'Enter your name', required: 'required'  %>
+      </div>
+
+      <div class="form-group message">
+        <%= f.label :message %>
+        <%= f.text_area :message, class:'form-control', row: 6, placeholder: 'Enter your name', required: 'required'  %>
+      </div>
+
+        <%= f.submit class: 'btn btn-theme' %>
+
+  <% end %>
+  
+  
+</article><!--//contact-form-->
+
+<article class="contact-form col-md-4 col-sm-5">
+
+  <%= render partial: 'shared/apply_online' %>
+  <%= render partial: 'shared/postal_address' %>
+  <%= render partial: 'shared/contact' %>
+
+</article>
+
+</div>
+<!--row-->
+
+<div class="row">
+  <article class="map-section col-md-12 col-sm-12">
+    <h3 class="title">How to find us</h3>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var college = {lat: <%= @map.latitude %>, lng: <%= @map.longitude %>};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: college
+            });
+            var marker = new google.maps.Marker({
+                position: college,
+                map: map
+            });
+            var infowindow = new google.maps.InfoWindow({
+                content: "<%= @map.name %>"
+            });
+            infowindow.open(map,marker);
+
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key= <%= @map.google_api_key %> &callback=initMap">
+    </script>
+  </article><!--//map-section-->
+
+</div>

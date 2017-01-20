@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113165601) do
+ActiveRecord::Schema.define(version: 20170120131926) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(version: 20170113165601) do
   create_table "admin_admission_processes", force: :cascade do |t|
     t.integer  "step"
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admin_contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "phone"
+    t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
