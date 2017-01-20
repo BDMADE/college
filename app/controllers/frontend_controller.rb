@@ -61,5 +61,7 @@ class FrontendController < ApplicationController
   end
 
   def contact
+    @title = 'Contact'
+    @map = Admin::GoogleMap.last
   end
 end

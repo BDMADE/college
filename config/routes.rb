@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   
   get 'events', to:'frontend#event'
 
-  get 'contacts', to: 'frontend#contact'
+  get 'contact', to: 'frontend#contact'
   
  ## this is admin part
   namespace :admin do

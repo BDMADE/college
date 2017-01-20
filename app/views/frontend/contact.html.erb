@@ -1,2 +1,64 @@
-<h1>Frontend#contact</h1>
-<p>Find me in app/views/frontend/contact.html.erb</p>
+<div class="row">
+<article class="contact-form col-md-8 col-sm-7">
+  <h3 class="title">Get in touch</h3>
+  <p>We’d love to hear from you.If you have any query,don't feel shy and ask us in your query.We will try our best to give reply in your message.</p>
+  <form>
+    <div class="form-group name">
+      <label for="name">Name</label>
+      <input id="name" type="text" class="form-control" placeholder="Enter your name">
+    </div><!--//form-group-->
+    <div class="form-group email">
+      <label for="email">Email<span class="required">*</span></label>
+      <input id="email" type="email" class="form-control" placeholder="Enter your email">
+    </div><!--//form-group-->
+    <div class="form-group phone">
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" class="form-control" placeholder="Enter your contact number">
+    </div><!--//form-group-->
+    <div class="form-group message">
+      <label for="message">Message<span class="required">*</span></label>
+      <textarea id="message" class="form-control" rows="6" placeholder="Enter your message here..."></textarea>
+    </div><!--//form-group-->
+    <button type="submit" class="btn btn-theme">Send message</button>
+  </form>
+</article><!--//contact-form-->
+
+<article class="contact-form col-md-4 col-sm-5">
+
+  <%= render partial: 'shared/apply_online' %>
+  <%= render partial: 'shared/postal_address' %>
+  <%= render partial: 'shared/contact' %>
+
+</article>
+
+</div>
+<!--row-->
+
+<div class="row">
+  <article class="map-section col-md-12 col-sm-12">
+    <h3 class="title">How to find us</h3>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var college = {lat: <%= @map.latitude %>, lng: <%= @map.longitude %>};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: college
+            });
+            var marker = new google.maps.Marker({
+                position: college,
+                map: map
+            });
+            var infowindow = new google.maps.InfoWindow({
+                content: "<%= @map.name %>"
+            });
+            infowindow.open(map,marker);
+
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key= <%= @map.google_api_key %> &callback=initMap">
+    </script>
+  </article><!--//map-section-->
+
+</div>
