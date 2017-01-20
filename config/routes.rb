@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  ## this is frontend part
   mount Signup::Engine, at: '/'
+  ## this is frontend part
   root 'frontend#home'
 
   get 'notice_boards', to: 'frontend#noticeboard'
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   
  ## this is admin part
   namespace :admin do
+    get 'dashboard', to:'dashboard#index'
     resources :semesters, :departments, :abouts, :notice_boards,:admission_eligibilities,:tuition_fees_groups,:tuition_fees,
               :admission_fees_statuses,:scholarship_groups,:scholarships,:courses,:news,:icons,:events,:websites,
               :quick_links,:testimonials,:google_maps,:postal_types,:postals,:videos,:social_media,:admission_processes,
