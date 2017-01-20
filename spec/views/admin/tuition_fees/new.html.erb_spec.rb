@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "admin/tuition_fees/new", type: :view do
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email: 'a@s.com', password: 'secret', admin: true) }
+  before do
+    assign(:current_user, user)
+  end
+
   before(:each) do
     assign(:admin_tuition_fee, Admin::TuitionFee.new(
       :name => "MyString",

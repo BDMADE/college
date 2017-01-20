@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "admin/videos/new", type: :view do
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email: 'a@s.com', password: 'secret', admin: true) }
+  before do
+    assign(:current_user, user)
+  end
+
   before(:each) do
     assign(:admin_video, Admin::Video.new(
       :name => "MyString",

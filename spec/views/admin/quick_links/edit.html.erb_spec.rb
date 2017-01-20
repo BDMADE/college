@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "admin/quick_links/edit", type: :view do
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email: 'a@s.com', password: 'secret', admin: true) }
+  before do
+    assign(:current_user, user)
+  end
+
   before(:each) do
     @admin_quick_link = assign(:admin_quick_link, Admin::QuickLink.create!(
       :name => "MyString",

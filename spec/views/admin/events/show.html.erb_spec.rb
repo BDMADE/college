@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "admin/events/show", type: :view do
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email: 'a@s.com', password: 'secret', admin: true) }
+  before do
+    assign(:current_user, user)
+  end
+
   before(:each) do
     @admin_event = assign(:admin_event, Admin::Event.create!(
       :name => "Name",
