@@ -1,5 +1,6 @@
 class Admin::QuickLinksController < ApplicationController
   before_action :set_admin_quick_link, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 

@@ -20,6 +20,12 @@ require 'rails_helper'
 
 RSpec.describe Admin::WebsitesController, type: :controller do
 
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email:'a@s.com',password: 'secret', admin: true) }
+
+  before do
+    log_in_as user
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Admin::Website. As you add validations to Admin::Website, be sure to
   # adjust the attributes here as well.

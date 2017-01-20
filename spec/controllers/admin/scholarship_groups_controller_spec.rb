@@ -20,6 +20,12 @@ require 'rails_helper'
 
 RSpec.describe Admin::ScholarshipGroupsController, type: :controller do
 
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email:'a@s.com',password: 'secret', admin: true) }
+
+  before do
+    log_in_as user
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Admin::ScholarshipGroup. As you add validations to Admin::ScholarshipGroup, be sure to
   # adjust the attributes here as well.

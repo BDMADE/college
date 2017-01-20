@@ -1,5 +1,6 @@
 class Admin::TestimonialsController < ApplicationController
   before_action :set_admin_testimonial, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 

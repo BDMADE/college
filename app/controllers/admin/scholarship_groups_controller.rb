@@ -1,5 +1,6 @@
 class Admin::ScholarshipGroupsController < ApplicationController
   before_action :set_admin_scholarship_group, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 

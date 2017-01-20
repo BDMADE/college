@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   ## this is frontend part
+  mount Signup::Engine, at: '/'
   root 'frontend#home'
 
   get 'notice_boards', to: 'frontend#noticeboard'

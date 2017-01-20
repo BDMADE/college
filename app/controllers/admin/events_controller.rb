@@ -1,5 +1,6 @@
 class Admin::EventsController < ApplicationController
   before_action :set_admin_event, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 

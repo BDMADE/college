@@ -1,5 +1,6 @@
 class Admin::IconsController < ApplicationController
   before_action :set_admin_icon, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 

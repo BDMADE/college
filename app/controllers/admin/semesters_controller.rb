@@ -1,5 +1,6 @@
 class Admin::SemestersController < ApplicationController
   before_action :set_admin_semester, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 
