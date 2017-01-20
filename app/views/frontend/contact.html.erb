@@ -2,25 +2,45 @@
 <article class="contact-form col-md-8 col-sm-7">
   <h3 class="title">Get in touch</h3>
   <p>We’d love to hear from you.If you have any query,don't feel shy and ask us in your query.We will try our best to give reply in your message.</p>
-  <form>
-    <div class="form-group name">
-      <label for="name">Name</label>
-      <input id="name" type="text" class="form-control" placeholder="Enter your name">
-    </div><!--//form-group-->
-    <div class="form-group email">
-      <label for="email">Email<span class="required">*</span></label>
-      <input id="email" type="email" class="form-control" placeholder="Enter your email">
-    </div><!--//form-group-->
-    <div class="form-group phone">
-      <label for="phone">Phone</label>
-      <input id="phone" type="tel" class="form-control" placeholder="Enter your contact number">
-    </div><!--//form-group-->
-    <div class="form-group message">
-      <label for="message">Message<span class="required">*</span></label>
-      <textarea id="message" class="form-control" rows="6" placeholder="Enter your message here..."></textarea>
-    </div><!--//form-group-->
-    <button type="submit" class="btn btn-theme">Send message</button>
-  </form>
+  <%= form_for @contact,url: url_for(controller:'frontend', action: 'create_contact')do |f| %>
+
+      <% if @contact.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this @contact from being saved:</h2>
+
+            <ul>
+              <% @contact.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="form-group name">
+        <%= f.label :name %>
+        <%= f.text_field :name, class:'form-control', placeholder: 'Enter your name', required: 'required' %>
+      </div>
+
+      <div class="form-group email">
+        <%= f.label :email %>
+        <%= f.text_field :email, class:'form-control', placeholder: 'Enter your name', required: 'required'  %>
+      </div>
+
+      <div class="form-group phone ">
+        <%= f.label :phone %>
+        <%= f.number_field :phone, class:'form-control', placeholder: 'Enter your name', required: 'required'  %>
+      </div>
+
+      <div class="form-group message">
+        <%= f.label :message %>
+        <%= f.text_area :message, class:'form-control', row: 6, placeholder: 'Enter your name', required: 'required'  %>
+      </div>
+
+        <%= f.submit class: 'btn btn-theme' %>
+
+  <% end %>
+  
+  
 </article><!--//contact-form-->
 
 <article class="contact-form col-md-4 col-sm-5">
