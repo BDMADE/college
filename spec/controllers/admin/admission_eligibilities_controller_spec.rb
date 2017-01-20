@@ -19,6 +19,11 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe Admin::AdmissionEligibilitiesController, type: :controller do
+  let(:user) { Signup::User.create(firstname: 'Rails', lastname: 'Admin', email:'a@s.com',password: 'secret', admin: true) }
+
+  before do
+    log_in_as user
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Admin::AdmissionEligibility. As you add validations to Admin::AdmissionEligibility, be sure to

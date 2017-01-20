@@ -1,5 +1,6 @@
 class Admin::TuitionFeesGroupsController < ApplicationController
   before_action :set_admin_tuition_fees_group, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 

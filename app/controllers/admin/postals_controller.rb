@@ -1,5 +1,6 @@
 class Admin::PostalsController < ApplicationController
   before_action :set_admin_postal, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 

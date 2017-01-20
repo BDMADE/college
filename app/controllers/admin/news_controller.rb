@@ -1,5 +1,6 @@
 class Admin::NewsController < ApplicationController
   before_action :set_admin_news, only: [:show, :edit, :update, :destroy]
+  before_action :authorized?
 
   layout 'college_admin'
 
