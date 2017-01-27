@@ -1,15 +1,17 @@
 <% website =  Admin::Website.last %>
+<% mobile_id = Admin::PostalType.find_by(name: 'mobile').id %>
+<% mobile = Admin::Postal.find_by(type_id: mobile_id) %>
+<% email_id = Admin::PostalType.find_by(name: 'email').id %>
+<% email = Admin::Postal.find_by(type_id: email_id) %>
+
 <header class="header">
 
   <div class="top-bar">
     <div class="container">
       <ul class="social-icons col-md-6 col-sm-6 col-xs-12">
-        <li><a href="#" ><i class="fa fa-twitter"></i></a></li>
-        <li><a href="https://www.facebook.com/DEI2014" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="https://www.youtube.com/channel/UCHtmNPXQwOWkGC0CAstfIoA" target="_blank"><i class="fa fa-youtube"></i></a></li>
-        <li><a href="#" ><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://google.com/+DeibdCfc" target="_blank" ><i class="fa fa-google-plus"></i></a></li>
-        <li class="row-end"><a href="#" ><i class="fa fa-rss"></i></a></li>
+        <% Admin::SocialMedium.all.each do |social| %>
+        <li><a href="<%= social.link %>" target="_blank"><i class="<%= social.icon.icon %>"></i></a></li>
+        <% end %>
       </ul><!--//social-icons-->
 
       <form class="hidden-xs pull-right search-form" role="search" method="get" target="_blank" action="https://www.google.com/search">
@@ -27,14 +29,14 @@
     </h1><!--//logo-->
     <div class="info col-md-8 col-sm-8">
       <ul class="menu-top navbar-right hidden-xs">
-        <li class="divider"><a href="#">Home</a></li>
-        <li class="divider"><a href="#">FAQ</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="divider"><a href="<%= root_url %>">Home</a></li>
+        <li class="divider"><a href="<%= abouts_url %>">About</a></li>
+        <li><a href="<%= contact_url %>">Contact</a></li>
       </ul><!--//menu-top-->
       <br />
       <div class="contact pull-right">
-        <p class="phone"><i class="fa fa-phone"></i>Call us today 01727 152 471</p>
-        <p class="email"><i class="fa fa-envelope"></i><a href="#">info@deibd.cf</a></p>
+        <p class="phone"><i class="fa fa-phone"></i>Call us today <%= mobile.details.html_safe %></p>
+        <p class="email"><i class="fa fa-envelope"></i><a href="#"><%= email.details.html_safe %></a></p>
       </div><!--//contact-->
     </div><!--//info-->
   </div>
