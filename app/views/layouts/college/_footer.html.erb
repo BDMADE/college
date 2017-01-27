@@ -1,3 +1,10 @@
+<% website =  Admin::Website.last %>
+<% address_id = Admin::PostalType.find_by(name: 'address').id %>
+<% address = Admin::Postal.find_by(type_id: address_id) %>
+<% mobile_id = Admin::PostalType.find_by(name: 'mobile').id %>
+<% mobile = Admin::Postal.where(type_id: mobile_id).last %>
+<% email_id = Admin::PostalType.find_by(name: 'email').id %>
+<% email = Admin::Postal.find_by(type_id: email_id) %>
 <footer class="footer">
   <div class="footer-content">
     <div class="container">
@@ -6,10 +13,10 @@
           <div class="footer-col-inner">
             <h3>DEI</h3>
             <ul>
-              <li><a href="#"><i class="fa fa-caret-right"></i>Home</a></li>
-              <li><a href="#"><i class="fa fa-caret-right"></i>Notice Board</a></li>
-              <li><a href="#"><i class="fa fa-caret-right"></i>About DEI</a></li>
-              <li><a href="#"><i class="fa fa-caret-right"></i>Contact us</a></li>
+              <li><a href="<%= root_url %>"><i class="fa fa-caret-right"></i>Home</a></li>
+              <li><a href="<%= notice_boards_url %>"><i class="fa fa-caret-right"></i>Notice Board</a></li>
+              <li><a href="<%= abouts_url %>"><i class="fa fa-caret-right"></i>About DEI</a></li>
+              <li><a href="<%= contact_url %>"><i class="fa fa-caret-right"></i>Contact us</a></li>
             </ul>
           </div><!--//footer-col-inner-->
         </div><!--//foooter-col-->
@@ -31,26 +38,16 @@
 
             <div id="google_translate_element"></div>
           </div><!--//footer-col-inner-->
-
-
-
-
         </div><!--//foooter-col-->
         <div class="footer-col col-md-3 col-sm-12 contact">
           <div class="footer-col-inner">
             <h3>Address</h3>
             <div class="row">
-              <p class="adr clearfix col-md-12 col-sm-4">
-                <i class="fa fa-map-marker pull-left"></i>
-                <span class="adr-group pull-left">
-                                    <span class="street-address">Dhaka Engineering Institute</span><br>
-                                    <span class="region">3/3 Block C,Lalmatia</span><br>
-                                    <span class="postal-code">Mohammadpur,Dhaka.</span><br>
-                                    <span class="country-name">Bangladesh</span>
-                                </span>
+              <p class="clearfix col-md-12 col-sm-4">
+                <span class="adr-group pull-left"><%= address.details.html_safe %></span>
               </p>
-              <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i>01770 519 667</p>
-              <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">info@deibd.cf</a></p>
+              <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i><%= mobile.details.html_safe %></p>
+              <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#"><%= email.details.html_safe %></a></p>
 
             </div>
           </div><!--//footer-col-inner-->
@@ -61,21 +58,13 @@
   <div class="bottom-bar">
     <div class="container">
       <div class="row">
-        <small class="copyright col-md-6 col-sm-12 col-xs-12">Copyright &copy; 2016 Dhaka Engineering Institute</small>
+        <small class="copyright col-md-6 col-sm-12 col-xs-12">Copyright &copy; <%= Time.now.year %> <%= website.name %></small>
         <ul class="social pull-right col-md-6 col-sm-12 col-xs-12">
-          <li><a href="#" ><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#" ><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#" ><i class="fa fa-youtube"></i></a></li>
-          <li><a href="#" ><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="#" ><i class="fa fa-google-plus"></i></a></li>
-          <li><a href="#" ><i class="fa fa-pinterest"></i></a></li>
-          <li><a href="#" ><i class="fa fa-skype"></i></a></li>
-          <li class="row-end"><a href="#" ><i class="fa fa-rss"></i></a></li>
+          <% Admin::SocialMedium.order(updated_at: :desc).each do |social| %>
+              <li><a href="<%= social.link %>" target="_blank"><i class="<%= social.icon.icon %>"></i></a></li>
+          <% end %>
         </ul><!--//social-->
       </div><!--//row-->
-
-
-
     </div><!--//container-->
   </div><!--//bottom-bar-->
 </footer>
