@@ -60,4 +60,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # install pg
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
-gem 'rollbar'
