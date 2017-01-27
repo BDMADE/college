@@ -1,0 +1,32 @@
+<section class="awards">
+  <div id="awards-carousel" class="awards-carousel carousel slide">
+    <div class="carousel-inner">
+      <div class="item active">
+        <ul class="logos">
+          <% Admin::MiniSlider.all.each do |mini_slider| %>
+              <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                <%= image_tag mini_slider.image.url(:medium), class: 'img-responsive' %>
+              </li>
+          <% end %>
+        </ul><!--//slides-->
+      </div><!--//item-->
+
+      <div class="item">
+        <ul class="logos">
+          <% Admin::MiniSlider.order(updated_at: :desc).each do |mini_slider| %>
+              <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                <%= image_tag mini_slider.image.url(:medium), class: 'img-responsive' %>
+              </li>
+          <% end %>
+        </ul><!--//slides-->
+      </div><!--//item-->
+    </div><!--//carousel-inner-->
+    <a class="left carousel-control" href="#awards-carousel" data-slide="prev">
+      <i class="fa fa-angle-left"></i>
+    </a>
+    <a class="right carousel-control" href="#awards-carousel" data-slide="next">
+      <i class="fa fa-angle-right"></i>
+    </a>
+
+  </div>
+</section>
