@@ -72,4 +72,22 @@ RSpec.describe FrontendHelper, type: :helper do
       expect(tuition_fees_badge(tuition_fees_2)).to eq('warning')
     end
   end
+
+  xdescribe '#active_menu(menu_url)' do
+    let(:active_url) { 'http://localhost:3000/noticeboard' }
+    let(:invalid_active_url) { nil }
+    let!(:original_url) { 'http://localhost:3000/noticeboard' }
+
+    context 'with valid url' do
+      it 'should return active menu' do
+        expect(active_menu(active_url)).to eq('active')
+      end
+    end
+
+    context 'with invalid url' do
+      it 'should return active menu' do
+        expect(active_menu(invalid_active_url)).to be nil
+      end
+    end
+  end
 end
