@@ -46,7 +46,7 @@
                 <figure class="thumb">
                   <%= image_tag news.image.url(:thumb), class: 'img-responsive' %>
                 </figure>
-                <p><%= truncate news.description.html_safe, length: 163 %></p>
+                <p><%= truncate_html news.description, length: 163 %></p>
                 <a class="read-more" href="news/<%= news.id %>">Read more<i class="fa fa-chevron-right"></i></a>
               </div>
           <% end %>
@@ -58,7 +58,7 @@
                 <figure class="thumb">
                   <%= image_tag news.image.url(:thumb), class: 'img-responsive' %>
                 </figure>
-                <p><%= truncate news.description.html_safe, length: 163 %></p>
+                <p><%= truncate_html news.description, length: 163 %></p>
                 <a class="read-more" href="news/<%= news.id %>">Read more<i class="fa fa-chevron-right"></i></a>
               </div>
           <% end %>
