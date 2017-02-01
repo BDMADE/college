@@ -84,4 +84,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.serve_static_assets = true
+  config.paperclip_defaults = {
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join('config/dropbox.yml'),
+    :dropbox_visibility => 'private'
+  }
 end
