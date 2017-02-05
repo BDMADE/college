@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120131926) do
+ActiveRecord::Schema.define(version: 20170205142921) do
 
   create_table "admin_abouts", force: :cascade do |t|
     t.string   "slug"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170120131926) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "base64_image"
   end
 
   create_table "admin_admission_eligibilities", force: :cascade do |t|
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170120131926) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "base64_image"
     t.index ["admission_process_id"], name: "admission_process_image"
   end
 
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 20170120131926) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "base64_image"
   end
 
   create_table "admin_departments", force: :cascade do |t|
@@ -133,6 +136,7 @@ ActiveRecord::Schema.define(version: 20170120131926) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "base64_image"
   end
 
   create_table "admin_news", force: :cascade do |t|
@@ -144,6 +148,8 @@ ActiveRecord::Schema.define(version: 20170120131926) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "base64_large_image"
+    t.string   "base64_thumb_image"
   end
 
   create_table "admin_notice_boards", force: :cascade do |t|
@@ -224,6 +230,7 @@ ActiveRecord::Schema.define(version: 20170120131926) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "base64_image"
   end
 
   create_table "admin_social_media", force: :cascade do |t|
@@ -263,6 +270,7 @@ ActiveRecord::Schema.define(version: 20170120131926) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "base64_image"
     t.index ["department_id"], name: "index_admin_testimonials_on_department_id"
     t.index ["semester_id"], name: "index_admin_testimonials_on_semester_id"
   end
@@ -303,6 +311,8 @@ ActiveRecord::Schema.define(version: 20170120131926) do
     t.integer  "favicon_file_size"
     t.datetime "favicon_updated_at"
     t.text     "details"
+    t.string   "base64_logo"
+    t.string   "base64_favicon"
   end
 
   create_table "signup_users", force: :cascade do |t|
