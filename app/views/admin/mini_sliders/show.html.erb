@@ -3,7 +3,9 @@
 <p>
   <strong>Name:</strong>
   <%= @admin_mini_slider.name %>
-<%= image_tag @admin_mini_slider.image.url(:thumb) %>
+  <% if Rails.env.development? %>
+      <%= image_tag @admin_mini_slider.image.url(:thumb) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_admin_mini_slider_path(@admin_mini_slider) %> |

@@ -17,7 +17,11 @@
   </div>
     <div class="field">
       <%= f.label :image%>
+      <% if Rails.env.development? %>
       <%= f.file_field :image %>
+      <% else %>
+          <%= f.text_field :base64_image %>
+      <% end %>
     </div>
   <div class="field">
     <%= f.label :caption_1 %>

@@ -14,7 +14,9 @@
     <% @admin_mini_sliders.each do |admin_mini_slider| %>
       <tr>
         <td><%= admin_mini_slider.name %></td>
+        <% if Rails.env.development? %>
         <td><%= image_tag admin_mini_slider.image.url(:thumb) %></td>
+        <% end %>
         <td><%= link_to 'Show', admin_mini_slider %></td>
         <td><%= link_to 'Edit', edit_admin_mini_slider_path(admin_mini_slider) %></td>
         <td><%= link_to 'Destroy', admin_mini_slider, method: :delete, data: { confirm: 'Are you sure?' } %></td>

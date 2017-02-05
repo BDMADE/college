@@ -15,7 +15,11 @@
         <ul class="logos">
           <% Admin::MiniSlider.order(updated_at: :desc).each do |mini_slider| %>
               <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                <% if Rails.env.development? %>
                 <%= image_tag mini_slider.image.url(:medium), class: 'img-responsive' %>
+                <% else %>
+                <img src="<%= mini_slider.base64_image%>" class="img-responsive"/>
+                <% end %>
               </li>
           <% end %>
         </ul><!--//slides-->

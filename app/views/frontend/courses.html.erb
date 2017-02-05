@@ -2,6 +2,10 @@
 
 <article class="welcome col-md-9 col-sm-8">
   <h3 class="title">Welcome to <%= @course.name %></h3>
+  <% if Rails.env.development? %>
   <p><%= image_tag @course.image.url(:large), class: 'fix800 img-responsive' %></p>
+  <% else %>
+  <p><img src="<%@course.base64_image%>" class="fix800 img-responsive"/></p>
+  <% end %>
   <p><%= @course.description.html_safe %></p>
 </article>

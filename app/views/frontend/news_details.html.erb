@@ -4,5 +4,9 @@
   </article>
 </div>
 <div class="news-wrapper col-md-4 col-sm-5">
+  <% if Rails.env.development? %>
   <p class="featured-image"><%= image_tag @news.image.url(:large), class: 'img-responsive' %></p>
+  <% else %>
+  <p class="featured-image"><img src="<%= @news.base64_large_image %>" class="img-responsive"/></p>
+  <% end %>
 </div>

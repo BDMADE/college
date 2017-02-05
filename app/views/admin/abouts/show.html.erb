@@ -9,11 +9,12 @@
   <strong>Description:</strong>
   <%= @admin_about.description %>
 </p>
+<% if Rails.env.development? %>
 <p>
   <strong>Image:</strong>
   <%= image_tag @admin_about.image.url(:thumb) %>
 </p>
-
+<% end %>
 <%= link_to 'Edit', edit_admin_about_path(@admin_about) %> |
 <%= link_to 'Back', admin_abouts_path %>
 <%= render 'shared/extends_admin_layout' %>

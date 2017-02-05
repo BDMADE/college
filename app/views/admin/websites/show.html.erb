@@ -5,8 +5,10 @@
   <%= @admin_website.name %>
   <strong>Details:</strong>
   <%= @admin_website.details %>
-  logo:<%= image_tag @admin_website.logo.url(:thumb) %>
-  favicon:<%= image_tag @admin_website.favicon.url(:medium) %>
+  <% if Rails.env.development? %>
+      logo:<%= image_tag @admin_website.logo.url(:thumb) %>
+      favicon:<%= image_tag @admin_website.favicon.url(:medium) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_admin_website_path(@admin_website) %> |

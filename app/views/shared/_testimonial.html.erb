@@ -16,7 +16,11 @@
             <div class="row">
               <p class="people col-md-8 col-sm-3 col-xs-8"><span class="name"><%= testimonial.name %></span><br />
                 <span class="title">Student(<%= testimonial.department.short_form %>-<%= testimonial.semester.short_form %>)</span></p>
+              <% if Rails.env.development? %>
               <%= image_tag testimonial.image.url(:thumb), class: 'img-responsive img-circle profile col-md-4 pull-right' %>
+               <% else %>
+              <img src="<%= testimonial.base64_image %>" class="img-responsive img-circle profile col-md-4 pull-right"/>
+              <% end %>
             </div>
             </div><!--//item-->
         <% end %>
