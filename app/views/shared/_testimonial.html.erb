@@ -11,7 +11,7 @@
                 <div class="item">
             <% end %>
             <blockquote class="quote">
-              <p><i class="fa fa-quote-left"></i><%= testimonial.description %></p>
+              <p><i class="fa fa-quote-left"></i><%= testimonial.description.html_safe %></p>
             </blockquote>
             <div class="row">
               <p class="people col-md-8 col-sm-3 col-xs-8"><span class="name"><%= testimonial.name %></span><br />
