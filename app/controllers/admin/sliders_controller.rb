@@ -56,6 +56,6 @@ class Admin::SlidersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_slider_params
-      params.require(:admin_slider).permit(:name, :caption_1, :caption_2, :image)
+      params.require(:admin_slider).permit(:name, :caption_1, :caption_2, :image, :base64_image)
     end
 end

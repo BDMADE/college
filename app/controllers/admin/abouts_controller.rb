@@ -56,6 +56,6 @@ class Admin::AboutsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_about_params
-      params.require(:admin_about).permit(:slug, :description,:image)
+      params.require(:admin_about).permit(:slug, :description,:image, :base64_image)
     end
 end

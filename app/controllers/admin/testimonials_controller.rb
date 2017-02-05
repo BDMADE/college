@@ -56,6 +56,6 @@ class Admin::TestimonialsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_testimonial_params
-      params.require(:admin_testimonial).permit(:name, :description, :department_id, :semester_id,:image)
+      params.require(:admin_testimonial).permit(:name, :description, :department_id, :semester_id,:image, :base64_image)
     end
 end
