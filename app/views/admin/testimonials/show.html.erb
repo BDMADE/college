@@ -19,7 +19,10 @@
   <strong>Semester:</strong>
   <%= @admin_testimonial.semester.name %>
 </p>
+
+<% if Rails.env.development? %>
 image:<%= image_tag@admin_testimonial.image.url(:thumb) %>
+<% end %>
 
 <%= link_to 'Edit', edit_admin_testimonial_path(@admin_testimonial) %> |
 <%= link_to 'Back', admin_testimonials_path %>

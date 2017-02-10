@@ -7,7 +7,11 @@
       <% admission_process.admin_admission_process_images.each do |process_image| %>
           <div class="col-md-12 col-sm-12">
             <div class="col-md-6 col-sm-6">
+              <% if Rails.env.development? %>
               <p><%= image_tag process_image.image.url(:large), class: 'img-responsive' %></p>
+              <% else %>
+              <p><img src="<%= process_image.base64_image %>" class="img-responsive"/></p>
+              <% end %>
             </div>
 
             <div class="col-md-6 col-sm-6">

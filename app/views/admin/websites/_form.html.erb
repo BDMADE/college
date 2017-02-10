@@ -1,34 +1,42 @@
 <%= form_for(admin_website) do |f| %>
-  <% if admin_website.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(admin_website.errors.count, "error") %> prohibited this admin_website from being saved:</h2>
+    <% if admin_website.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(admin_website.errors.count, "error") %> prohibited this admin_website from being saved:</h2>
 
-      <ul>
-        <% admin_website.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+          <ul>
+            <% admin_website.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
+    <div class="field">
+      <%= f.label :details %>
+      <%= f.text_area :details %>
+    </div>
+    <div class="field">
+      <%= f.label :logo %>
+      <% if Rails.env.development? %>
+          <%= f.file_field :logo %>
+      <% else %>
+          <%= f.text_field :base64_logo %>
+      <% end %>
+    </div>
+    <div class="field">
+      <%= f.label :favicon %>
+      <% if Rails.env.development? %>
+          <%= f.file_field :favicon %>
+      <% else %>
+          <%= f.text_field :base64_favicon %>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :details %>
-    <%= f.text_area :details %>
-  </div>
-  <div class="field">
-    <%= f.label :logo %>
-    <%= f.file_field :logo %>
-  </div>
-  <div class="field">
-    <%= f.label :favicon %>
-    <%= f.file_field :favicon %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

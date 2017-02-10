@@ -3,10 +3,13 @@
 <p>
   <strong>Name:</strong>
   <%= @admin_slider.name %>
-<p>
-  <strong>Image</strong>
-  <%= image_tag @admin_slider.image.url(:thumb) %>
-</p>
+
+  <% if Rails.env.development? %>
+    <p>
+      <strong>Image</strong>
+      <%= image_tag @admin_slider.image.url(:thumb) %>
+    </p>
+<% end %>
 <p>
   <strong>Caption 1:</strong>
   <%= @admin_slider.caption_1 %>

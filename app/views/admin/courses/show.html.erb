@@ -6,11 +6,12 @@
 </p>  
   <strong>Description:</strong>
   <%= @admin_course.description %>
+<% if Rails.env.development? %>
 <p>  
   <strong>Image:</strong>
   <%= image_tag @admin_course.image.url(:thumb) %>
 </p>
-
+<% end %>
 <%= link_to 'Edit', edit_admin_course_path(@admin_course) %> |
 <%= link_to 'Back', admin_courses_path %>
 <%= render 'shared/extends_admin_layout' %>

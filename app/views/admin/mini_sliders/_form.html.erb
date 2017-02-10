@@ -1,26 +1,30 @@
 <%= form_for(admin_mini_slider) do |f| %>
-  <% if admin_mini_slider.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(admin_mini_slider.errors.count, "error") %> prohibited this admin_mini_slider from being saved:</h2>
+    <% if admin_mini_slider.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(admin_mini_slider.errors.count, "error") %> prohibited this admin_mini_slider from being saved:</h2>
 
-      <ul>
-      <% admin_mini_slider.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% admin_mini_slider.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
 
     <div class="field">
       <%= f.label :image %>
-      <%= f.file_field :image %>
+      <% if Rails.env.development? %>
+          <%= f.file_field :image %>
+      <% else %>
+          <%= f.text_field :base64_image %>
+      <% end %>
     </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

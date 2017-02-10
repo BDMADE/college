@@ -25,7 +25,11 @@
 
   <div class="header-main container">
     <h1 class="logo col-md-4 col-sm-4">
+      <% if Rails.env.development? %>
       <%= image_tag website.logo.url(:medium), class: 'img-responsive', id: 'logo' %>
+      <% else %>
+      <img src="<%= website.base64_logo %>" class="img-responsive" id="logo" />
+      <% end %>
     </h1><!--//logo-->
     <div class="info col-md-8 col-sm-8">
       <ul class="menu-top navbar-right hidden-xs">

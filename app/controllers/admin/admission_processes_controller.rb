@@ -56,6 +56,6 @@ class Admin::AdmissionProcessesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
   def admin_admission_process_params
-    params.require(:admin_admission_process).permit(:step, :name, admin_admission_process_images_attributes:[:id,:image,:_destroy,admin_admission_process_image_details_attributes:[:id,:details,:_destroy]])
+    params.require(:admin_admission_process).permit(:step, :name, admin_admission_process_images_attributes:[:id,:image,:base64_image,:_destroy,admin_admission_process_image_details_attributes:[:id,:details,:_destroy]])
   end
 end

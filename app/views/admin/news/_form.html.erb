@@ -22,7 +22,12 @@
   </div>
     <div class="field">
       <%= f.label :image %>
+      <% if Rails.env.development? %>
       <%= f.file_field :image %>
+      <% else %>
+        large:  <%= f.text_field :base64_large_image %>
+        thumb:  <%= f.text_field :base64_thumb_image %>
+      <% end %>
     </div>
 
   <div class="actions">

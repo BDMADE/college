@@ -5,7 +5,11 @@
   <ul class="slides">
     <% @sliders.each do |slider| %>
     <li>
+      <% if Rails.env.development? %>
       <%= image_tag slider.image.url(:large), class: 'fix360' %>
+      <% else %>
+      <img src="<%= slider.base64_image %>" class="fix360"/>
+      <% end %>
       <p class="flex-caption">
         <span class="main" ><%= slider.caption_1 %></span>
         <br/>
@@ -44,7 +48,11 @@
               <div class="col-md-4 news-item">
                 <h2 class="title"><a  href="news/<%= news.id %>"><%= news.name %></a></h2>
                 <figure class="thumb">
-                  <%= image_tag news.image.url(:thumb), class: 'img-responsive' %>
+                  <% if Rails.env.development? %>
+                      <%= image_tag news.image.url(:thumb), class: 'img-responsive' %>
+                  <% else %>
+                      <img src="<%= news.base64_thumb_image%>" class="img-responsive"/>
+                  <% end %>
                 </figure>
                 <p><%= truncate_html news.description, length: 163 %></p>
                 <a class="read-more" href="news/<%= news.id %>">Read more<i class="fa fa-chevron-right"></i></a>
@@ -56,7 +64,11 @@
               <div class="col-md-4 news-item">
                 <h2 class="title"><a  href="news/<%= news.id %>"><%= news.name %></a></h2>
                 <figure class="thumb">
+                  <% if Rails.env.development? %>
                   <%= image_tag news.image.url(:thumb), class: 'img-responsive' %>
+                  <% else %>
+                  <img src="<%= news.base64_thumb_image%>" class="img-responsive"/>
+                  <% end %>
                 </figure>
                 <p><%= truncate_html news.description, length: 163 %></p>
                 <a class="read-more" href="news/<%= news.id %>">Read more<i class="fa fa-chevron-right"></i></a>

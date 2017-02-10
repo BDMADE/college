@@ -11,7 +11,7 @@
 <i class="fa fa-clock-o"></i><%= event.starting_time %> - <%= event.ending_time %></span>
             <span class="location"><i class="<%= event.icon.icon %>"></i><a href="#"><%= event.place %></a></span>
           </p>
-          <p class="desc"><%= event.details %></p>
+          <p class="desc"><%= event.details.html_safe %></p>
         </div>
       </article>
   <% end %>

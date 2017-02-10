@@ -56,6 +56,6 @@ class Admin::NewsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_news_params
-      params.require(:admin_news).permit(:name, :description,:image)
+      params.require(:admin_news).permit(:name, :description,:image, :base64_large_image, :base64_thumb_image)
     end
 end

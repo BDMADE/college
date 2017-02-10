@@ -17,7 +17,9 @@
         <td><%= admin_course.name %></td>
         <td><%= admin_course.description %></td>
 
+        <% if Rails.env.development? %>
         <td><%= image_tag admin_course.image.url(:thumb) %></td>
+        <% end %>
         <td><%= link_to 'Show', admin_course %></td>
         <td><%= link_to 'Edit', edit_admin_course_path(admin_course) %></td>
         <td><%= link_to 'Destroy', admin_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>

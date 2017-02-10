@@ -56,6 +56,6 @@ class Admin::WebsitesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_website_params
-      params.require(:admin_website).permit(:name, :logo, :favicon, :details)
+      params.require(:admin_website).permit(:name, :logo, :favicon, :details, :base64_logo, :base64_favicon)
     end
 end
